@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS,Python,dictionary,OS X," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="###开源项目：PYGLOSSARY  PYGLOSSARY python-lzo  ###准备好以下环境：   BeautifulSoup4 required to sanitize html contents. sudo easy_install beautifulsoup4 html5lib GNU make as part of Command Line Tools for Xcode.">
+<meta name="keywords" content="iOS,Python,dictionary,OS X">
+<meta property="og:type" content="article">
+<meta property="og:title" content="\BGL\DSL\MDX\CD\ ===&gt; OS X dictionary">
+<meta property="og:url" content="https://qunwang6.github.io/2015/05/08/OSXDictionary/index.html">
+<meta property="og:site_name" content="群点科技">
+<meta property="og:description" content="###开源项目：PYGLOSSARY  PYGLOSSARY python-lzo  ###准备好以下环境：   BeautifulSoup4 required to sanitize html contents. sudo easy_install beautifulsoup4 html5lib GNU make as part of Command Line Tools for Xcode.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2015-07-02T13:07:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="\BGL\DSL\MDX\CD\ ===&gt; OS X dictionary">
+<meta name="twitter:description" content="###开源项目：PYGLOSSARY  PYGLOSSARY python-lzo  ###准备好以下环境：   BeautifulSoup4 required to sanitize html contents. sudo easy_install beautifulsoup4 html5lib GNU make as part of Command Line Tools for Xcode.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qunwang6.github.io/2015/05/08/OSXDictionary/"/>
+
+
+
+
+
+  <title>\BGL\DSL\MDX\CD\ ===> OS X dictionary | 群点科技</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">群点科技</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技改变生活</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qunwang6.github.io/2015/05/08/OSXDictionary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qunwang6">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="群点科技">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">\BGL\DSL\MDX\CD\ ===> OS X dictionary</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-08T00:00:00+08:00">
+                2015-05-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/dictionary/" itemprop="url" rel="index">
+                    <span itemprop="name">dictionary</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###开源项目：PYGLOSSARY</p>
+<ul>
+<li><a href="https://github.com/ilius/pyglossary" target="_blank" rel="noopener">PYGLOSSARY</a></li>
+<li><a href="https://bitbucket.org/james_taylor/python-lzo-static" target="_blank" rel="noopener">python-lzo</a></li>
+</ul>
+<p>###准备好以下环境：</p>
+<blockquote>
+<ul>
+<li>BeautifulSoup4 required to sanitize html contents.<br> <code>sudo easy_install beautifulsoup4 html5lib</code></li>
+<li>GNU make as part of <a href="http://developer.apple.com/downloads" target="_blank" rel="noopener">Command Line Tools for Xcode.</a></li>
+<li>Dictionary Development Kit as part of <a href="http://developer.apple.com/downloads" target="_blank" rel="noopener">Auxillary Tools for Xcode</a>.将Dictionary Development Kit解压到<strong>/Applications/Utilities/DictionaryDevelopmentKit/  </strong>（不含空格,中文名:应用程序/实用工具那里，也可以解压到其它地方。）</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<hr>
+<p>###BGL ===&gt; OSX.dictionary<br>转换</p>
+<pre><code>python pyglossary.pyw --read-options=resPath=OtherResources --write-format=AppleDict dict.bgl dict.xml
+</code></pre><p>编译</p>
+<ul>
+<li>在Makefile里设置好相关参数和路径，如DICT_NAME是生成文件的名称，DICT_BUILD_TOOL_DIR是Dictionary Development Kit的路径，如果错了就不能生成文件。</li>
+<li>编辑模板文件中的Info.plist文件，<code>CFBundleName</code>是在Mac字典程序工具栏下面显示的标签名，<code>CFBundleDisplayName</code>是词典名称.<code>CFBundleIdentifier</code>是词典的ID，需保持唯一性。</li>
+<li>根据模板格式编辑Dictionary.xml、Dictionary.css，如果有图片则放置在OtherResources/目录下.</li>
+<li>打开终端，cd进入模板文件目录，输入<code>make</code>，稍等一段时间，即可生成字典文件,将object目录下生成的dictionary文件拷贝至 ~/Library/Dictionaries，打开字典程序，即可看到生成的字典。<br>或者直接用<code>make &amp;&amp; make install</code>这个命令，生成词典后直接安装到了~/Library/Dictionaries。</li>
+</ul>
+<p><strong>注意：如果OtherResources里的图片太多的话会出现以下错误：</strong></p>
+<blockquote>
+<p>/Volumes/Macintosh HD/Applications/Utilities/DictionaryDevelopmentKit//bin/build_dict.sh: line 206: /bin/cp: Argument list too long<br>Error.<br>make: <em>*</em> [all] Error 1</p>
+</blockquote>
+<p>可以在编译前不加入图片、语音文件，在编译完成后将图片、语音文件复制到xxx.dictionary/Contents目录下。</p>
+<hr>
+<h3 id="DSL-gt-OSX-dictionary"><a href="#DSL-gt-OSX-dictionary" class="headerlink" title="DSL ===&gt; OSX.dictionary"></a>DSL ===&gt; OSX.dictionary</h3><p>1.Convert DSL from UTF-16 to UTF-8:</p>
+<pre><code>iconv -f UTF-16 -t UTF-8 dict_utf16.dsl &gt; dict_utf8.dsl
+</code></pre><p>2.Using pyGlossary python project, convert UTF-8 DSL to AppleDict XML:</p>
+<pre><code>python pyglossary.pyw --read-format=ABBYYLingvoDSL --write-format=AppleDict dict_utf8.dsl dict.xml
+</code></pre><p><strong>lingvo格式.dsl转换成可发音的词典。(注意修改命令参数)</strong>↓</p>
+<blockquote>
+<p>audio conversion is optional, “no” by default. The following command works,<br>~/Development/pyglossary/pyglossary.pyw –read-option=”audio=yes” test.dsl test.xml<br>make &amp;&amp; make install<br><code>python /Applications/Utilities/DictionaryDevelopmentKit/pyglossary/pyglossary.pyw --read-options=&quot;audio=yes&quot; --write-format=AppleDict ldoce55.dsl ldoce55.xml</code></p>
+</blockquote>
+<p>3.Using Command Line Tools for Xcode and Dictionary Development Kit:<br><code>make</code><br><code>make install</code></p>
+<hr>
+<h3 id="MDX-gt-OSX-dictionary"><a href="#MDX-gt-OSX-dictionary" class="headerlink" title="MDX ===&gt; OSX.dictionary"></a>MDX ===&gt; OSX.dictionary</h3><ul>
+<li>转换</li>
+</ul>
+<pre><code>cd ~/Downloads/oald8/
+~/Software/pyglossary/pyglossary.pyw --read-options=resPath=OtherResources --write-format=AppleDict oald8.mdx oald8.xml
+</code></pre><ul>
+<li><p>修改.xml文件里的链接</p>
+<pre><code>sed -i &quot;&quot; &apos;s:src=&quot;/:src=&quot;:g&apos; oald8.xml
+sed -i &quot;&quot; &apos;s|sound://\([/_a-zA-Z0-9]*\).spx|\1.wav|g&apos; oald8.xml
+</code></pre></li>
+</ul>
+<blockquote>
+<p>第一个是去掉”/“<br>第二个是吧”.spx”改成”.wav”</p>
+</blockquote>
+<ul>
+<li>将.spx语音文件转换成.wav(需要安装speex，麻烦!可直接从lingvo那里复制）</li>
+</ul>
+<pre><code>find OtherResources -name &quot;*.spx&quot; -execdir sh -c &apos;spx={};speexdec $spx  ${spx%.*}.wav&apos; \
+</code></pre><ul>
+<li>编译</li>
+</ul>
+<pre><code>make &amp;&amp; make install
+</code></pre><blockquote>
+<p>注意：如果OtherResources里的图片和语音文件太多的话会出现错误，可以在编译前不加入图片和语音文件，在编译完成后将图片复制到xxx.dictionary/Contents目录下。</p>
+</blockquote>
+<hr>
+<p>###修改单词内部的链接</p>
+<blockquote>
+<p>The x-dictionary: URI contains three elements separated by colons as the general form—target selector, target text, and dictionary bundle ID. The target selector must be either <code>d</code>(for definition) or <code>r</code> (for reference). Use d if you want to search definitions of the following key text. Use <code>r</code>if you want to refer to the entry specified by the reference ID which must be unique to each dictionary.<br>辞書.appの辞書を引くURLスキームに<br>次のようなものもあります。<br>x-dictionary:d:key_text:dict_bundle_id<br>x-dictionary:r:reference_id:dict_bundle_id<br><strong>１key_text 　　 調べたい単語
+</strong>２reference_id 辞書を作るために作成するdictionary.xmlの<br>各タイトルごとに割り当てる固有のエントリーID</p>
+<p><d:entry id="0ABCDE" d:title="案の定"><br>**３dict_bundle_id 辞書の中のInfo.plistのBundle identifierの値<br>(例えば大辞泉の場合はcom.apple.dictionary.Daijisen)</d:entry></p>
+</blockquote>
+<ul>
+<li>单词跳转用<code>x-dictionary:r:</code><br>(只能在当前词典内跳转且<code>x-dictionary:r:</code>后的单词大小写须与d:entry id=”<code>***</code>“里的大小写一致，不能有空格否则不能跳转。。）</li>
+<li>单词查找用<code>x-dictionary:d:</code><br>（会先搜索当前的词典，若没有，会调用其它词典搜索，不限大小写、空格。）<br>（基本上都是用r,用d很少)</li>
+</ul>
+<h3 id="ex"><a href="#ex" class="headerlink" title="ex."></a>ex.</h3><pre><code>&lt;d:entry id=&quot;make a face&quot; d:title=&quot;make a face&quot;&gt;
+&lt;d:index d:value=&quot;make a face&quot;/&gt;
+&lt;html&gt;&lt;body&gt;&lt;h1&gt;make a face&lt;/h1&gt;
+&lt;a href=&quot;entry://grimace&quot;&gt;grimace&lt;/a&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;/d:entry&gt;
+
+&lt;d:entry id=&quot;make faces&quot; d:title=&quot;make faces&quot;&gt;
+&lt;d:index d:value=&quot;make faces&quot;/&gt;
+&lt;html&gt;&lt;body&gt;&lt;h1&gt;make faces&lt;/h1&gt;
+&lt;a href=&quot;entry://make a face&quot;&gt;make a face&lt;/a&gt;&lt;/body&gt;&lt;/html
+&lt;/d:entry&gt;
+</code></pre><blockquote>
+<p><strong>“entry://grimace”</strong><br>将<code>entry://</code>替换为<code>x-dictionary:r:</code></p>
+</blockquote>
+<p>===&gt;<code>&quot;x-dictionary:r:grimace&quot;</code></p>
+<p>####不能有空格<br><strong>d:entry id=”make a face”<br>href=”entry://make a face”</strong><br>类似上面的单词，中间不能有空格，否则单词间不能跳转。<br>===&gt;<br>d:entry id=”make_a_face”<br>href=”x-dictionary:r:make_a_face”</p>
+<p>正则替换：<code>(&lt;d:entry id=&quot;[^&quot;]+)\s</code>替换为:<code>\1_</code><br><code>(href=&quot;x-dictionary:r:[^&quot;]+)\s</code>替换为<code>\1_</code></p>
+<p>####不能含有<code>&#39;</code>or<code>’</code>符号<br>正则替换：<code>(href=&quot;x-dictionary:r:[^&quot;]+)’</code><br><code>(&lt;d:entry id=&quot;[^&quot;]+)’</code><br>替换为<code>\1-</code></p>
+<h3 id="词组-词性跳转、定位"><a href="#词组-词性跳转、定位" class="headerlink" title="词组/词性跳转、定位"></a>词组/词性跳转、定位</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">词组/词性页面内定位</span><br><span class="line">&lt;a class=&quot;LP_OS&quot; href=&quot;entry://#L_hkx1&quot;&gt;suffix&lt;/a&gt;</span><br><span class="line">&lt;a name=&quot;L_hkx1&quot;&gt;&lt;/a&gt;</span><br><span class="line">==&gt; &lt;a class=&quot;LP_OS&quot; href=&quot;#L_hkx1&quot;&gt;suffix&lt;/a&gt;</span><br><span class="line">------------------</span><br><span class="line">词组/词性跳转并定位</span><br><span class="line">&lt;a href=&quot;entry://clip#ld3097&quot;&gt;clip&lt;/a&gt;</span><br><span class="line">&lt;a name=&quot;ld3097&quot;&gt;&lt;/a&gt;&lt;span class=&quot;L_IDOM&quot;&gt;$100 / 50 cents etc a clip&lt;/span&gt;</span><br><span class="line">==&gt; &lt;a href=&quot;x-dictionary:r:clip:#ld3097&quot;&gt;clip&lt;/a&gt;</span><br><span class="line">用到的正则表达式：</span><br><span class="line">x-dictionary:r:(.+?)#</span><br><span class="line">替换为：</span><br><span class="line">x-dictionary:r:\1:#</span><br><span class="line">相关的词典：朗文当代英语词典英汉双解第4版</span><br><span class="line">Shorter Oxford English Dictionary Sixth Edition</span><br></pre></td></tr></table></figure>
+<p>###语音<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio id=&quot;\1&quot; src=&quot;Sounds\/\1&quot; type=&quot;audio/mpeg&quot;/&gt;&lt;img class=&quot;sound&quot; src=&quot;Sound.png&quot; onmouseover=&quot;document.getElementById(&apos;\1&apos;).play(); return false;&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="高亮搜索关键词"><a href="#高亮搜索关键词" class="headerlink" title="高亮搜索关键词"></a>高亮搜索关键词</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;d:index d:value=&quot;make it&quot; d:parental-control=&quot;1&quot; d:anchor=&quot;xpointer(//*[@id=&apos;make_it&apos;])&quot;/&gt;</span><br><span class="line">&lt;div d:parental-control=&quot;1&quot; d:priority=&quot;2&quot;&gt;</span><br><span class="line">		&lt;h3&gt;PHRASES&lt;/h3&gt;</span><br><span class="line">		&lt;div id=&quot;make_it&quot;&gt;&lt;b&gt;make it&lt;/b&gt; : succeed in something; survive.&lt;/div&gt;</span><br><span class="line">		&lt;h4&gt;&lt;a href=&quot;x-dictionary:r:make_up_ones_mind&quot;&gt;&lt;b&gt;make up one&apos;s mind&lt;/b&gt;&lt;/a&gt;&lt;/h4&gt;</span><br><span class="line">	&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>===&gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;d:index d:value=&quot;make it&quot; d:anchor=&quot;xpointer(//*[@id=&apos;make_it&apos;])&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>###附录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;d:entry id=&quot;front_back_matter&quot; d:title=&quot;Front/Back Matter&quot;&gt;</span><br><span class="line">&lt;/d:entry&gt;</span><br><span class="line"></span><br><span class="line">添加以下值到Info.plis或者编译前的.plist文件</span><br><span class="line">&lt;key&gt;DCSDictionaryFrontMatterReferenceID&lt;/key&gt;</span><br><span class="line">&lt;string&gt;front_back_matter&lt;/string&gt;</span><br></pre></td></tr></table></figure></p>
+<p>entry id值要与string里的值一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;key&gt;CFBundleIdentifier&lt;/key&gt;</span><br><span class="line">	&lt;string&gt;com.apple.xxxx&lt;/string&gt;</span><br><span class="line">	必须为英文字符，否则不能显示附录。</span><br></pre></td></tr></table></figure></p>
+<p>###词条自动合并<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;d:entry id=&quot;1&quot; d:title=&quot;1&quot;&gt;</span><br><span class="line">    &lt;d:index d:value=&quot;a&quot;/&gt;</span><br><span class="line">1</span><br><span class="line">&lt;/d:entry&gt;</span><br><span class="line">&lt;d:entry id=&quot;2&quot; d:title=&quot;2&quot;&gt;</span><br><span class="line">    &lt;d:index d:value=&quot;a&quot;/&gt;</span><br><span class="line">2</span><br><span class="line">&lt;/d:entry&gt;</span><br><span class="line">&lt;d:entry id=&quot;3&quot; d:title=&quot;3&quot;&gt;</span><br><span class="line">    &lt;d:index d:value=&quot;a&quot;/&gt;</span><br><span class="line">3</span><br><span class="line">&lt;/d:entry&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>&lt;d:index d:value=&quot;a&quot;/&gt;</code>值相同，查a时，全部合并在同一页面显示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;d:entry id=&quot;1&quot; d:title=&quot;1&quot;&gt;</span><br><span class="line">    &lt;d:index d:value=&quot;a&quot;/&gt;</span><br><span class="line">    &lt;d:index d:value=&quot;b&quot;/&gt;</span><br><span class="line">a</span><br><span class="line">&lt;/d:entry&gt;</span><br><span class="line">&lt;d:entry id=&quot;2&quot; d:title=&quot;2&quot;&gt;</span><br><span class="line">    &lt;d:index d:value=&quot;b&quot;/&gt;</span><br><span class="line">b</span><br><span class="line">&lt;/d:entry&gt;</span><br></pre></td></tr></table></figure></p>
+<p>id=”1”里只有a；id=”2”含有a和b。<br>==&gt;查找a，只有一个；查找b，有两个，合并。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;d:entry id=&quot;1&quot; d:title=&quot;1&quot;&gt;</span><br><span class="line">    &lt;d:index d:value=&quot;a b&quot;/&gt;</span><br><span class="line"></span><br><span class="line">a</span><br><span class="line">&lt;/d:entry&gt;</span><br><span class="line">&lt;d:entry id=&quot;2&quot; d:title=&quot;2&quot;&gt;</span><br><span class="line">    &lt;d:index d:value=&quot;a-b&quot;/&gt;</span><br><span class="line">b</span><br><span class="line">&lt;/d:entry&gt;</span><br></pre></td></tr></table></figure></p>
+<p><code>a b</code>与<code>a-b</code>相似，合并。<br>id=”1”里有ab；id=”2”有ba。</p>
+<p>###隐藏 词条/搜索结果</p>
+<ul>
+<li>需要电脑打开家长控制</li>
+<li>在词条中加入<code>d:parental-control=&quot;1&quot;</code>标签，含有这个标签的词条或句子就不会显示。</li>
+</ul>
+<p>###其他</p>
+<ul>
+<li><p><code>&lt;d:index d:value=&quot;made&quot; d:title=&quot;made (make)&quot;/&gt;</code>查找made,索引栏显示made (make)。</p>
+</li>
+<li><p><code>@@@LINK=(?&lt;sub&gt;.*?)&lt;/body&gt;</code><br>===&gt;<br><code>&lt;a href=&quot;x-dictionary:r:\1&quot;&gt;\1&lt;/a&gt;&lt;/body&gt;</code></p>
+</li>
+</ul>
+<blockquote>
+<p>在 XHTML 中不鼓励使用 name 属性，应该使用 id 取而代之。</p>
+</blockquote>
+<h3 id="help"><a href="#help" class="headerlink" title="help"></a>help</h3><blockquote>
+<p>(run “pyglossary.pyw –help” for more info), or use Tkinter interface:<br>Install python-tk using “pip install python-tk” or somehow else (i don’t know much about Mac)<br>Then run the program with: python pyglossary.pyw –ui=tk</p>
+</blockquote>
+<h3 id="RuntimeError"><a href="#RuntimeError" class="headerlink" title="RuntimeError"></a>RuntimeError</h3><blockquote>
+<p><strong>RuntimeError: maximum recursion depth exceeded while calling a Python object</strong><br>The conversion stops when cleaning item “non-“. The html text maybe buggy to cause many time recursion. Here is a workaround, insert the following lines at the top of file pyglossary/plugins/appledict.py<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">sys.setrecursionlimit(10000)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>But be aware that this item cannot be displayed at all. The above line is only to avoid runtime exception.</p>
+<h3 id="No-reference-index-record"><a href="#No-reference-index-record" class="headerlink" title="No reference index record"></a>No reference index record</h3><blockquote>
+<ul>
+<li>Note: No reference index record.</li>
+</ul>
+</blockquote>
+<p>可忽略的错误，文本中若没有<code>a href=&quot;x-dictionary:r:</code>和对应的<code>d:entry id</code>便不会生成reference index</p>
+<p>###常用正则表达式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">(\w+)</span><br><span class="line">(\w+.mp3)</span><br><span class="line">(?&lt;sub&gt;.*?)</span><br><span class="line">(.*?)</span><br><span class="line">(.+?)</span><br><span class="line">(.*+)</span><br><span class="line">小写转大写\U\1</span><br><span class="line">===</span><br><span class="line">去下划线_</span><br><span class="line">(&lt;d:index d:value=&quot;[^&quot;]+)_</span><br><span class="line">\1</span><br><span class="line">===</span><br><span class="line">&lt;h1&gt;advance_2&lt;/h1&gt;</span><br><span class="line">(&lt;h1&gt;[^\&lt;]+)_</span><br><span class="line">\1  (后加一空格）//&lt;h1&gt; air_plane&lt;/h1&gt; ==&gt; &lt;h1&gt; air plane&lt;/h1&gt;</span><br><span class="line">===</span><br><span class="line">匹配/  // //.jpg</span><br><span class="line">&lt;sk_img (?&lt;sub&gt;.*?)/(\w+).jpg&quot; (?&lt;sub&gt;.*?)”/&gt;</span><br><span class="line">(?&lt;sub&gt;.*?)([^\/]+)&quot;</span><br><span class="line"></span><br><span class="line">===</span><br><span class="line">&lt;sk_example variant=&quot;BRE&quot; file=&quot;uk/p/p07/p070_/p070-000210864.mp3”/&gt;</span><br><span class="line">&lt;sk_example variant=&quot;BRE&quot; file=&quot;(?&lt;sub&gt;.*?)/(\w+\-\w+).mp3”/&gt;</span><br><span class="line">===</span><br><span class="line">^p  ^n</span><br><span class="line">===</span><br><span class="line">去空行</span><br><span class="line">[^p]+</span><br><span class="line">===&gt;^p</span><br></pre></td></tr></table></figure></p>
+<p>###大小写替换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">href=&quot;x-dictionary:r:(.+?)&quot;</span><br><span class="line">href=&quot;x-dictionary:r:\L\1&quot;</span><br><span class="line">&lt;d:entry id=&quot;(.+?)&quot;</span><br><span class="line">&lt;d:entry id=&quot;\L\1&quot;</span><br></pre></td></tr></table></figure>
+<p>若大写转写会重复的词，编译会出错，不建议替换。<br>词条跳转entry id部分与x-dictionary:r:部分大小写要一致。</p>
+<hr>
+<p>###CSS部分</p>
+<ul>
+<li>.apple_client-panel body{margin: 0 0 15px;font-size: 16px;}//取词小窗口修改大小</li>
+<li>mdx===&gt;osx.dic  部分字体间距<br>font {padding: 2px;}</li>
+</ul>
+<hr>
+<p>###显示数量限制<br>0001-01100<br>1000个词</p>
+<hr>
+<p>###特殊符号</p>
+<ul>
+<li><p>德文字符<code>ä ü ö ß</code>替换成相应的英文字母，链接跳转用。</p>
+<p>XML文档<code>&lt;htlm&gt;</code>里的 <code>&amp;amp;</code>不要替换。<br>在xml当中“&amp;”必须采用转义字符<code>&amp;amp;</code></p>
+</li>
+</ul>
+<p><code>&amp;amp;</code>&lt;—&amp;</p>
+<p><code>&amp;copy;</code>&lt;—&copy;</p>
+<p><code>&amp;reg;</code>&lt;—&reg;</p>
+<p><code>&amp;quot;</code>&lt;—<code>&quot;</code></p>
+<p><code>&amp;apos;</code> =<code>&#39;</code></p>
+<p><code>&amp;nbsp;</code>&lt;—&nbsp;  空格 ===&gt;<code>&amp;#160;</code></p>
+<p><code>&amp;lt;</code>—&gt;<code>&lt;</code></p>
+<p><code>&amp;gt;</code>—&gt;<code>&gt;</code><br>单个<code>&lt; &gt;</code>要替换掉</p>
+<p>###<code>&#39;</code>or<code>‘</code>符号的问题</p>
+<p><code>&amp;acute;</code></p>
+<p>audio id元素里不能有<code>&#39;</code> getelementbyid里也不能有<code>’</code><br>正则 <code>(&lt;audio id=&quot;[^&quot;]+)’</code><br>下载链接里不能识别’<br>wget -i 下载<br><code>‘</code> 替换为%27<br><a href="http://www.rhymer.com/RhymingDictionary/hadn%27t.html" target="_blank" rel="noopener">http://www.rhymer.com/RhymingDictionary/hadn%27t.html</a><br>终端命令里也不能识别文件名含有<code>’</code><br>用<code>_</code>代替</p>
+<hr>
+<p>###参考：</p>
+<ul>
+<li><a href="http://goldendict.org/forum/viewtopic.php?f=4&amp;t=1933&amp;start=30" target="_blank" rel="noopener">GoldenDict Mac OS X available - Early Access Builds</a></li>
+<li><a href="https://bitbucket.org/xwang/pyglossary-apple" target="_blank" rel="noopener">PyGlossary Overview</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/userexperience/Conceptual/DictionaryServicesProgGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40006152" target="_blank" rel="noopener">developer.apple.com</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/dictionary/" rel="tag"># dictionary</a>
+          
+            <a href="/tags/OS-X/" rel="tag"># OS X</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/05/08/PasswordGenerator/" rel="next" title="password generator">
+                <i class="fa fa-chevron-left"></i> password generator
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/08/TheJoelTest/" rel="prev" title="The Joel Test">
+                The Joel Test <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qunwang6</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qunwang6" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qunwang6" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qunwang6@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gmail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DSL-gt-OSX-dictionary"><span class="nav-number">1.</span> <span class="nav-text">DSL ===&gt; OSX.dictionary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MDX-gt-OSX-dictionary"><span class="nav-number">2.</span> <span class="nav-text">MDX ===&gt; OSX.dictionary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ex"><span class="nav-number">3.</span> <span class="nav-text">ex.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#词组-词性跳转、定位"><span class="nav-number">4.</span> <span class="nav-text">词组/词性跳转、定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高亮搜索关键词"><span class="nav-number">5.</span> <span class="nav-text">高亮搜索关键词</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#help"><span class="nav-number">6.</span> <span class="nav-text">help</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RuntimeError"><span class="nav-number">7.</span> <span class="nav-text">RuntimeError</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#No-reference-index-record"><span class="nav-number">8.</span> <span class="nav-text">No reference index record</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qunwang6</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

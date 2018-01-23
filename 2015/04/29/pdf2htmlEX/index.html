@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,html,pdf," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="pdf2htmlEX wiki日文  ###install  brew install fontforge --HEAD brew tap homebrew/versions brew install pdf2htmlex brew install -v pdf2htmlex --HEAD">
+<meta name="keywords" content="Python,html,pdf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="pdf2htmlEX">
+<meta property="og:url" content="https://qunwang6.github.io/2015/04/29/pdf2htmlEX/index.html">
+<meta property="og:site_name" content="群点科技">
+<meta property="og:description" content="pdf2htmlEX wiki日文  ###install  brew install fontforge --HEAD brew tap homebrew/versions brew install pdf2htmlex brew install -v pdf2htmlex --HEAD">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2015-06-03T13:13:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="pdf2htmlEX">
+<meta name="twitter:description" content="pdf2htmlEX wiki日文  ###install  brew install fontforge --HEAD brew tap homebrew/versions brew install pdf2htmlex brew install -v pdf2htmlex --HEAD">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qunwang6.github.io/2015/04/29/pdf2htmlEX/"/>
+
+
+
+
+
+  <title>pdf2htmlEX | 群点科技</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">群点科技</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技改变生活</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qunwang6.github.io/2015/04/29/pdf2htmlEX/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qunwang6">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="群点科技">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">pdf2htmlEX</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-04-29T00:00:00+08:00">
+                2015-04-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><a href="https://github.com/coolwanglu/pdf2htmlEX" target="_blank" rel="noopener">pdf2htmlEX</a></li>
+<li><a href="http://oku.edu.mie-u.ac.jp/~okumura/texwiki/?pdf2htmlEX" target="_blank" rel="noopener">wiki日文</a></li>
+</ul>
+<p>###install</p>
+<ul>
+<li><code>brew install fontforge --HEAD</code></li>
+<li><code>brew tap homebrew/versions</code></li>
+<li><code>brew install pdf2htmlex</code></li>
+<li><code>brew install -v pdf2htmlex --HEAD</code></li>
+</ul>
+<a id="more"></a>
+<p>###Usage<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">用法: pdf2htmlEX [options] &lt;input.pdf&gt; [&lt;output.html&gt;]</span><br><span class="line">0 关闭； 1 开启</span><br><span class="line">  -f,--first-page &lt;int&gt;         需要转换的起始页 (默认: 1)</span><br><span class="line">  -l,--last-page &lt;int&gt;          需要转换的最后一页 (默认: 2147483647)</span><br><span class="line">  --zoom &lt;fp&gt;                   缩放比例</span><br><span class="line">  --fit-width &lt;fp&gt;              适合宽度 &lt;fp&gt; 像素</span><br><span class="line">  --fit-height &lt;fp&gt;             适合高度 &lt;fp&gt; 像素</span><br><span class="line">  --use-cropbox &lt;int&gt;           使用剪切框 (default: 1)</span><br><span class="line">  --hdpi &lt;fp&gt;                   图像水平分辨率 (default: 144)</span><br><span class="line">  --vdpi &lt;fp&gt;                   图像垂直分辨率 (default: 144)</span><br><span class="line">  --embed &lt;string&gt;              指定哪些元素应该被嵌入到输出</span><br><span class="line">  --embed-css &lt;int&gt;             将CSS文件嵌入到输出中 (default: 1)</span><br><span class="line">  --embed-font &lt;int&gt;            将字体文件嵌入到输出中 (default: 1)</span><br><span class="line">  --embed-image &lt;int&gt;           将图片文件嵌入到输出中 (default: 1)</span><br><span class="line">  --embed-javascript &lt;int&gt;      将javascript文件嵌入到输出中 (default: 1)</span><br><span class="line">  --embed-outline &lt;int&gt;         将链接嵌入到输出中 (default: 1)</span><br><span class="line">  --split-pages &lt;int&gt;           将页面分割为单独的文件 (default: 0)</span><br><span class="line">  --dest-dir &lt;string&gt;           指定目标目录 (default: &quot;.&quot;)</span><br><span class="line">  --css-filename &lt;string&gt;       生成的css文件的文件名 (default: &quot;&quot;)</span><br><span class="line">  --page-filename &lt;string&gt;      分割的网页名称  (default:&quot;&quot;)</span><br><span class="line">  --outline-filename &lt;string&gt;   生成的链接文件名称 (default:&quot;&quot;)</span><br><span class="line">  --process-nontext &lt;int&gt;       渲染图行，文字除外 (default: 1)</span><br><span class="line">  --process-outline &lt;int&gt;       在html中显示链接 (default: 1)</span><br><span class="line">  --printing &lt;int&gt;              支持打印 (default: 1)</span><br><span class="line">  --fallback &lt;int&gt;              在备用模式下输出 (default: 0)</span><br><span class="line">  --embed-external-font &lt;int&gt;   嵌入局部匹配的外部字体 (default: 1)</span><br><span class="line">  --font-format &lt;string&gt;        嵌入的字体文件后缀 (ttf,otf,woff,svg) (default: &quot;woff&quot;)</span><br><span class="line">  --decompose-ligature &lt;int&gt;    分解连字-&gt; fi (default:0)</span><br><span class="line">  --auto-hint &lt;int&gt;             使用fontforge的autohint上的字体时不提示 (default: 0)</span><br><span class="line">  --external-hint-tool &lt;string&gt; 字体外部提示工具 (overrides --auto-hint) (default: &quot;&quot;)</span><br><span class="line">  --stretch-narrow-glyph &lt;int&gt;  伸展狭窄的字形，而不是填充 (default: 0)</span><br><span class="line">  --squeeze-wide-glyph &lt;int&gt;    收缩较宽的字形，而不是截断 (default: 1)</span><br><span class="line">  --override-fstype &lt;int&gt;       clear the fstype bits in TTF/OTF fonts (default:0)</span><br><span class="line">  --process-type3 &lt;int&gt;         convert Type 3 fonts for web (experimental) (default: 0)</span><br><span class="line">  --heps &lt;fp&gt;                   合并文本的水平临界值，单位：像素(default: 1)</span><br><span class="line">  --veps &lt;fp&gt;                   vertical threshold for merging text, in pixels (default: 1)</span><br><span class="line">  --space-threshold &lt;fp&gt;        断字临界值 (临界值 * em) (default:0.125)</span><br><span class="line">  --font-size-multiplier &lt;fp&gt;   一个大于1的值增加渲染精度 (default: 4)</span><br><span class="line">  --space-as-offset &lt;int&gt;       把空格字符作为偏移量 (default: 0)</span><br><span class="line">  --tounicode &lt;int&gt;             如何处理ToUnicode的CMap (0=auto, 1=force,-1=ignore) (default: 0)</span><br><span class="line">  --optimize-text &lt;int&gt;         尽量减少用于文本的HTML元素的数目 (default: 0)</span><br><span class="line">  --bg-format &lt;string&gt;          指定背景图像格式 (default: &quot;png&quot;)</span><br><span class="line">  -o,--owner-password &lt;string&gt;  所有者密码 (为了加密文件)</span><br><span class="line">  -u,--user-password &lt;string&gt;   用户密码 (为了加密文件)</span><br><span class="line">  --no-drm &lt;int&gt;                覆盖文档的 DRM 设置 (default: 0)</span><br><span class="line">  --clean-tmp &lt;int&gt;             转换后删除临时文件 (default: 1)</span><br><span class="line">  --data-dir &lt;string&gt;           指定的数据目录 (default: &quot;.\share\pdf2htmlEX&quot;)</span><br><span class="line">  --debug &lt;int&gt;                 打印调试信息 (default: 0)</span><br><span class="line">  -v,--version                  打印版权和版本信息</span><br><span class="line">  -h,--help                     打印使用帮助信息</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br></pre></td><td class="code"><pre><span class="line">pdf2htmlEX(1)               General Commands Manual              pdf2htmlEX(1)</span><br><span class="line"></span><br><span class="line">NAME</span><br><span class="line">         pdf2htmlEX - converts PDF to HTML without losing text and format.</span><br><span class="line"></span><br><span class="line">USAGE</span><br><span class="line">         pdf2htmlEX [options] &lt;input-filename&gt; [&lt;output-filename&gt;]</span><br><span class="line"></span><br><span class="line">DESCRIPTION</span><br><span class="line">       pdf2htmlEX is a utility that converts PDF files to HTML files.</span><br><span class="line"></span><br><span class="line">       pdf2htmlEX  tries its best to render the PDF precisely, maintain proper</span><br><span class="line">       styling, while retaining text and optimizing for Web.</span><br><span class="line"></span><br><span class="line">       Fonts are extracted form PDF and then embedded into HTML (Type 3  fonts</span><br><span class="line">       are  not  supported).  Text  in  the  converted  HTML  file  is usually</span><br><span class="line">       selectable and copyable.</span><br><span class="line"></span><br><span class="line">       Other objects are rendered as images and also embedded.</span><br><span class="line"></span><br><span class="line">OPTIONS</span><br><span class="line">   Pages</span><br><span class="line">       -f, --first-page &lt;num&gt; (Default: 1)</span><br><span class="line">              Specify the first page to process</span><br><span class="line"></span><br><span class="line">       -l, --last-page &lt;num&gt; (Default: last page)</span><br><span class="line">              Specify the last page to process</span><br><span class="line"></span><br><span class="line">   Dimensions</span><br><span class="line">       --zoom &lt;ratio&gt;, --fit-width &lt;width&gt;, --fit-height &lt;height&gt;</span><br><span class="line">              --zoom specifies the zoom  factor  directly;  --fit-width/height</span><br><span class="line">              specifies  the maximum width/height of a page, the values are in</span><br><span class="line">              pixels.</span><br><span class="line"></span><br><span class="line">              If multiple values are specified, the minimum one will be used.</span><br><span class="line"></span><br><span class="line">              If none is specified, pages will be rendered as 72DPI.</span><br><span class="line"></span><br><span class="line">       --use-cropbox &lt;0|1&gt; (Default: 1)</span><br><span class="line">              Use CropBox instead of MediaBox for output.</span><br><span class="line"></span><br><span class="line">       --hdpi &lt;dpi&gt;, --vdpi &lt;dpi&gt; (Default: 144)</span><br><span class="line">              Specify the horizontal and vertical DPI for images</span><br><span class="line"></span><br><span class="line">   Output</span><br><span class="line">       --embed &lt;string&gt;</span><br><span class="line">       --embed-css &lt;0|1&gt; (Default: 1)</span><br><span class="line">       --embed-font &lt;0|1&gt; (Default: 1)</span><br><span class="line">       --embed-image &lt;0|1&gt; (Default: 1)</span><br><span class="line">       --embed-javascript &lt;0|1&gt; (Default: 1)</span><br><span class="line">       --embed-outline &lt;0|1&gt; (Default: 1)</span><br><span class="line">              Specify which elements should be embedded into the  output  HTML</span><br><span class="line">              file.</span><br><span class="line"></span><br><span class="line">              If  switched  off,  separated files will be generated along with</span><br><span class="line">              the HTML file for the corresponding elements.</span><br><span class="line"></span><br><span class="line">              --embed accepts a string as argument. Each letter of the  string</span><br><span class="line">              must  be  one  of  `cCfFiIjJoO`, which corresponds to one of the</span><br><span class="line">              --embed-*** switches. Lower case letters for 0  and  upper  case</span><br><span class="line">              letters  for  1.  For  example,  `--embed  cFIJo` means to embed</span><br><span class="line">              everything but CSS files and outlines.</span><br><span class="line"></span><br><span class="line">       --split-pages &lt;0|1&gt; (Default: 0)</span><br><span class="line">              If turned on, the content of each page is stored in a  separated</span><br><span class="line">              file.</span><br><span class="line"></span><br><span class="line">              This  switch is useful if you want pages to be loaded separately</span><br><span class="line">              &amp; dynamically -- a supporting server might be necessary.</span><br><span class="line"></span><br><span class="line">              Also see --page-filename.</span><br><span class="line"></span><br><span class="line">       --dest-dir &lt;dir&gt; (Default: .)</span><br><span class="line">              Specify destination folder.</span><br><span class="line"></span><br><span class="line">       --css-filename &lt;filename&gt; (Default: &lt;none&gt;)</span><br><span class="line">              Specify the filename of the generated css file, if not embedded.</span><br><span class="line"></span><br><span class="line">              If it&apos;s empty, the file name will be determined automatically.</span><br><span class="line"></span><br><span class="line">       --page-filename &lt;filename&gt; (Default: &lt;none&gt;)</span><br><span class="line">              Specify the filename template for pages when --split-pages is 1</span><br><span class="line"></span><br><span class="line">              A %d placeholder may be included in `filename` to indicate where</span><br><span class="line">              the  page  number  should  be placed. The placeholder supports a</span><br><span class="line">              limited subset of normal numerical placeholders, including spec‐</span><br><span class="line">              ified width and zero padding.</span><br><span class="line"></span><br><span class="line">              If  `filename`  does not contain a placeholder for the page num‐</span><br><span class="line">              ber, the page number will be inserted directly before  the  file</span><br><span class="line">              extension.  If the filename does not have an extension, the page</span><br><span class="line">              number will be placed at the end of the file name.</span><br><span class="line"></span><br><span class="line">              If --page-filename is not specified,  &lt;input-filename&gt;  will  be</span><br><span class="line">              used for the output filename, replacing the extension with .page</span><br><span class="line">              and adding the page number directly before the extension.</span><br><span class="line"></span><br><span class="line">              Examples</span><br><span class="line"></span><br><span class="line">              pdf2htmlEX --split-pages 1 foo.pdf</span><br><span class="line"></span><br><span class="line">                Yields page files foo1.page, foo2.page, etc.</span><br><span class="line"></span><br><span class="line">              pdf2htmlEX --split-pages 1 foo.pdf --page-filename bar.baz</span><br><span class="line"></span><br><span class="line">                Yields page files bar1.baz, bar2.baz, etc.</span><br><span class="line"></span><br><span class="line">              pdf2htmlEX --split-pages 1 foo.pdf --page-filename page%dbar.baz</span><br><span class="line"></span><br><span class="line">                Yields page files page1bar.baz, page2bar.baz, etc.</span><br><span class="line"></span><br><span class="line">              pdf2htmlEX --split-pages 1 foo.pdf --page-filename bar%03d.baz</span><br><span class="line"></span><br><span class="line">                Yields page files bar001.baz, bar002.baz, etc.</span><br><span class="line"></span><br><span class="line">       --outline-filename &lt;filename&gt; (Default: &lt;none&gt;)</span><br><span class="line">              Specify the filename of  the  generated  outline  file,  if  not</span><br><span class="line">              embedded.</span><br><span class="line"></span><br><span class="line">              If it&apos;s empty, the file name will be determined automatically.</span><br><span class="line"></span><br><span class="line">       --process-nontext &lt;0|1&gt; (Default: 1)</span><br><span class="line">              Whether to process non-text objects (as images)</span><br><span class="line"></span><br><span class="line">       --process-outline &lt;0|1&gt; (Default: 1)</span><br><span class="line">              Whether to show outline in the generated HTML</span><br><span class="line"></span><br><span class="line">       --printing &lt;0|1&gt; (Default: 1)</span><br><span class="line">              Enable  printing  support.  Disabling this option may reduce the</span><br><span class="line">              size of CSS.</span><br><span class="line"></span><br><span class="line">       --fallback &lt;0|1&gt; (Default: 0)</span><br><span class="line">              Output in fallback mode, for better accuracy and browser compat‐</span><br><span class="line">              ibility, but the size becomes larger.</span><br><span class="line"></span><br><span class="line">       --tmp-file-size-limit &lt;limit&gt; (Default: -1)</span><br><span class="line">              This  limits the total size (in KB) of the temporary files which</span><br><span class="line">              will also limit the total size of the output file.  This  is  an</span><br><span class="line">              estimate and it will stop after a page, once the total temporary</span><br><span class="line">              files size is greater than this number.</span><br><span class="line"></span><br><span class="line">              -1 means no limit and is the default.</span><br><span class="line"></span><br><span class="line">   Fonts</span><br><span class="line">       --embed-external-font &lt;0|1&gt; (Default: 1)</span><br><span class="line">              Specify whether the local matched fonts, for fonts not  embedded</span><br><span class="line">              in PDF, should be embedded into HTML.</span><br><span class="line"></span><br><span class="line">              If  this  switch  is off, only font names are exported such that</span><br><span class="line">              web browsers may try to find proper fonts themselves,  and  that</span><br><span class="line">              might cause issues about incorrect font metrics.</span><br><span class="line"></span><br><span class="line">       --font-format &lt;format&gt; (Default: woff)</span><br><span class="line">              Specify the format of fonts extracted from the PDF file.</span><br><span class="line"></span><br><span class="line">       --decompose-ligature &lt;0|1&gt; (Default: 0)</span><br><span class="line">              Decompose ligatures. For example &apos;fi&apos; -&gt; &apos;f&apos;&apos;i&apos;.</span><br><span class="line"></span><br><span class="line">       --auto-hint &lt;0|1&gt; (Default: 0)</span><br><span class="line">              If  set  to 1, hints will be generated for the fonts using font‐</span><br><span class="line">              forge.</span><br><span class="line"></span><br><span class="line">              This may be preceded by --external-hint-tool.</span><br><span class="line"></span><br><span class="line">       --external-hint-tool &lt;tool&gt; (Default: &lt;none&gt;)</span><br><span class="line">              If specified, the tool will be called in order to enhanced hint‐</span><br><span class="line">              ing for fonts, this will precede --auto-hint.</span><br><span class="line"></span><br><span class="line">              The  tool  will  be called as &apos;&lt;tool&gt; &lt;in.suffix&gt; &lt;out.suffix&gt;&apos;,</span><br><span class="line">              where suffix will be the same as specified for --font-format.</span><br><span class="line"></span><br><span class="line">       --stretch-narrow-glyph &lt;0|1&gt; (Default: 0)</span><br><span class="line">              If set to 1, glyphs narrower  than  described  in  PDF  will  be</span><br><span class="line">              stretched;  otherwise  space  will be padded to the right of the</span><br><span class="line">              glyphs</span><br><span class="line"></span><br><span class="line">       --squeeze-wide-glyph &lt;0|1&gt; (Default: 1)</span><br><span class="line">              If set to  1,  glyphs  wider  than  described  in  PDF  will  be</span><br><span class="line">              squeezed; otherwise it will be truncated.</span><br><span class="line"></span><br><span class="line">       --override-fstype &lt;0|1&gt; (Default: 0)</span><br><span class="line">              Clear the fstype bits in TTF/OTF fonts.</span><br><span class="line"></span><br><span class="line">              Turn  this  on  if Internet Explorer complains about &apos;Permission</span><br><span class="line">              must be Installable&apos; AND you have permission to do so.</span><br><span class="line"></span><br><span class="line">       --process-type3 &lt;0|1&gt; (Default: 0)</span><br><span class="line">              If turned on, pdf2htmlEX will try to convert Type 3  fonts  such</span><br><span class="line">              that  text can be rendered natively in HTML.  Otherwise all text</span><br><span class="line">              with Type 3 fonts will be rendered as image.</span><br><span class="line"></span><br><span class="line">              This feature is highly experimental.</span><br><span class="line"></span><br><span class="line">   Text</span><br><span class="line">       --heps &lt;len&gt;, --veps &lt;len&gt; (Default: 1)</span><br><span class="line">              Specify the maximum  tolerable  horizontal/vertical  offset  (in</span><br><span class="line">              pixels).</span><br><span class="line"></span><br><span class="line">              pdf2htmlEX  would try to optimize the generated HTML file moving</span><br><span class="line">              Text within this distance.</span><br><span class="line"></span><br><span class="line">       --space-threshold &lt;ratio&gt; (Default: 0.125)</span><br><span class="line">              pdf2htmlEX would insert a whitespace character &apos; &apos; if  the  dis‐</span><br><span class="line">              tance  between two consecutive letters in the same line is wider</span><br><span class="line">              than ratio * font_size.</span><br><span class="line"></span><br><span class="line">       --font-size-multiplier &lt;ratio&gt; (Default: 4.0)</span><br><span class="line">              Many web browsers limit the minimum font size,  and  many  would</span><br><span class="line">              round the given font size, which results in incorrect rendering.</span><br><span class="line"></span><br><span class="line">              Specify a ratio greater than 1 would resolve this issue, however</span><br><span class="line">              it might freeze some browsers.</span><br><span class="line"></span><br><span class="line">              For some versions of Firefox, however, there will be  a  problem</span><br><span class="line">              when  the  font size is too large, in which case a smaller value</span><br><span class="line">              should be specified here.</span><br><span class="line"></span><br><span class="line">       --space-as-offset &lt;0|1&gt; (Default: 0)</span><br><span class="line">              If set to 1, space characters will be treated as offsets,  which</span><br><span class="line">              allows a better optimization.</span><br><span class="line"></span><br><span class="line">              For  PDF  files  with  bad encodings, turning on this option may</span><br><span class="line">              cause losing characters.</span><br><span class="line"></span><br><span class="line">       --tounicode &lt;-1|0|1&gt; (Default: 0)</span><br><span class="line">              A ToUnicode map may be provided for each font in PDF which indi‐</span><br><span class="line">              cates  the  &apos;meaning&apos;  of the characters. However often there is</span><br><span class="line">              better &quot;ToUnicode&quot; info in Type 0/1  fonts,  and  sometimes  the</span><br><span class="line">              ToUnicode map provided is wrong.  If this value is set to 1, the</span><br><span class="line">              ToUnicode Map is always applied, if provided in PDF, and charac‐</span><br><span class="line">              ters may not render correctly in HTML if there are collisions.</span><br><span class="line"></span><br><span class="line">              If  set to -1, a customized map is used such that rendering will</span><br><span class="line">              be correct in HTML (visually the same), but you may not get cor‐</span><br><span class="line">              rect characters by select &amp; copy &amp; paste.</span><br><span class="line"></span><br><span class="line">              If  set  to  0, pdf2htmlEX would try its best to balance the two</span><br><span class="line">              methods above.</span><br><span class="line"></span><br><span class="line">       --optimize-text &lt;0|1&gt; (Default: 0)</span><br><span class="line">              If set to 1, pdf2htmlEX will try to reduce the  number  of  HTML</span><br><span class="line">              elements used for text. Turn it off if anything goes wrong.</span><br><span class="line"></span><br><span class="line">   Background Image</span><br><span class="line">       --bg-format &lt;format&gt; (Default: png)</span><br><span class="line">              Specify  the  background  image  format.  Run `pdf2htmlEX -v` to</span><br><span class="line">              check all supported formats.</span><br><span class="line"></span><br><span class="line">   PDF Protection</span><br><span class="line">       -o, --owner-password &lt;password&gt;</span><br><span class="line">              Specify owner password</span><br><span class="line"></span><br><span class="line">       -u, --user-password &lt;password&gt;</span><br><span class="line">              Specify user password</span><br><span class="line"></span><br><span class="line">       --no-drm &lt;0|1&gt; (Default: 0)</span><br><span class="line">              Override document DRM settings</span><br><span class="line"></span><br><span class="line">              Turn this on only when you have permission.</span><br><span class="line"></span><br><span class="line">   Misc.</span><br><span class="line">       --clean-tmp &lt;0|1&gt; (Default: 1)</span><br><span class="line">              If switched off, intermediate files won&apos;t be cleaned in the end.</span><br><span class="line"></span><br><span class="line">       --data-dir &lt;dir&gt; (Default: /usr/local/share/pdf2htmlEX)</span><br><span class="line">              Specify the folder holding the manifest  and  other  files  (see</span><br><span class="line">              below for the manifest file)`</span><br><span class="line"></span><br><span class="line">       --tmp-dir &lt;dir&gt; (Default: /tmp)</span><br><span class="line">              Specify the temporary folder to use for temporary files</span><br><span class="line"></span><br><span class="line">       --css-draw &lt;0|1&gt; (Default: 0)</span><br><span class="line">              Experimental and unsupported CSS drawing</span><br><span class="line"></span><br><span class="line">       --debug &lt;0|1&gt; (Default: 0)</span><br><span class="line">              Print debug information.</span><br><span class="line"></span><br><span class="line">   Meta</span><br><span class="line">       -v, --version</span><br><span class="line">              Print copyright and version info</span><br><span class="line"></span><br><span class="line">       --help Print usage information</span><br><span class="line"></span><br><span class="line">MANIFEST and DATA-DIR</span><br><span class="line">       When  split-pages  is 0, the manifest file describes how the final html</span><br><span class="line">       page should be generated.</span><br><span class="line"></span><br><span class="line">       By default, pdf2htmlEX will use the manifest in  the  default  data-dir</span><br><span class="line">       (run  `pdf2htmlEX  -v` to check), which gives a simple demo of its syn‐</span><br><span class="line">       tax.</span><br><span class="line"></span><br><span class="line">       You can modify the default one, or you can create a new one and specify</span><br><span class="line">       the correct data-dir in the command line.</span><br><span class="line"></span><br><span class="line">       All files referred by the manifest must be located in the data-dir.</span><br><span class="line"></span><br><span class="line">EXAMPLE</span><br><span class="line">       pdf2htmlEX /path/to/file.pdf</span><br><span class="line">              Convert file.pdf into file.html</span><br><span class="line"></span><br><span class="line">       pdf2htmlEX --clean-tmp 0 --debug 1 /path/to/file.pdf</span><br><span class="line">              Convert file.pdf and leave all intermediate files.</span><br><span class="line"></span><br><span class="line">       pdf2htmlEX --dest-dir out --embed fi /path/to/file.pdf</span><br><span class="line">              Convert  file.pdf  into out/file.html and leave font/image files</span><br><span class="line">              separated.</span><br><span class="line"></span><br><span class="line">COPYRIGHT</span><br><span class="line">       Copyright 2012,2013 Lu Wang &lt;coolwanglu@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">       pdf2htmlEX is licensed under GPLv3 with additional terms, read  LICENSE</span><br><span class="line">       for details.</span><br><span class="line"></span><br><span class="line">AUTHOR</span><br><span class="line">       pdf2htmlEX is written by Lu Wang &lt;coolwanglu@gmail.com&gt;</span><br><span class="line"></span><br><span class="line">SEE ALSO</span><br><span class="line">       Home page</span><br><span class="line">              https://github.com/coolwanglu/pdf2htmlEX</span><br><span class="line"></span><br><span class="line">       pdf2htmlEX Wiki</span><br><span class="line">              https://github.com/coolwanglu/pdf2htmlEX/wiki</span><br><span class="line"></span><br><span class="line">                                pdf2htmlEX 0.12                  pdf2htmlEX(1)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>pdftohtml -f 1 -l 2 poppler: because xpdf, pdf2image, and poppler install conflicting executables Please <code>brew unlink poppler</code> before continuing.</p>
+</blockquote>
+<p>###参考：</p>
+<ul>
+<li><a href="http://fontforge.github.io/en-US/downloads/mac/" target="_blank" rel="noopener">FontForge</a></li>
+<li><a href="http://poppler.freedesktop.org/" target="_blank" rel="noopener">Poppler</a></li>
+<li><a href="http://blog.csdn.net/crazypandariy/article/details/17663731" target="_blank" rel="noopener">pdf2htmlEX实现pdf转html</a></li>
+<li><a href="http://opendesignarch.blogspot.com/2013/01/download-and-install-pdf2html.html" target="_blank" rel="noopener">Download and Install pdf2htmlEX</a></li>
+<li><a href="http://blog.framebench.com/our-love-for-open-source/" target="_blank" rel="noopener">Installing pdf2htmlEX on Ubuntu</a></li>
+<li><a href="https://github.com/coolwanglu/pdf2htmlEX/issues/428" target="_blank" rel="noopener">Homebrew –HEAD build fail on OS X 10.9.4</a></li>
+<li><a href="http://coolwanglu.github.io/pdf2htmlEX/doc/tb108wang.html" target="_blank" rel="noopener">Online publishing via pdf2htmlEX</a></li>
+<li><a href="https://github.com/Homebrew/homebrew/blob/master/Library/Formula/pdf2htmlex.rb" target="_blank" rel="noopener">pdf2htmlex.rb</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/pdf/" rel="tag"># pdf</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/04/29/QrCode/" rel="next" title="QR Code">
+                <i class="fa fa-chevron-left"></i> QR Code
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/01/SwiftGuide/" rel="prev" title="Swift 语言指南">
+                Swift 语言指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qunwang6</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qunwang6" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qunwang6" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qunwang6@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gmail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qunwang6</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

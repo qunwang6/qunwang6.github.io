@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="logic,Python,Mathematica," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="推理 第一句话确定：July 14  July 16  August 14 August 15  August 17(告诉B日期不可能为18，19，==&amp;gt;告诉A的月份不可能为May，June)第二句话确定：July 16 August 15 August 17(日期14有两个，B不可能确定，排除）第三句话确定：July 16（月份August有两个，A不能确定，推出July16)  ###">
+<meta name="keywords" content="logic,Python,Mathematica">
+<meta property="og:type" content="article">
+<meta property="og:title" content="When is Cheryl’s birthday?">
+<meta property="og:url" content="https://qunwang6.github.io/2015/05/11/CherylsBirthday/index.html">
+<meta property="og:site_name" content="群点科技">
+<meta property="og:description" content="推理 第一句话确定：July 14  July 16  August 14 August 15  August 17(告诉B日期不可能为18，19，==&amp;gt;告诉A的月份不可能为May，June)第二句话确定：July 16 August 15 August 17(日期14有两个，B不可能确定，排除）第三句话确定：July 16（月份August有两个，A不能确定，推出July16)  ###">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/b2/d5/fd/b2d5fd051ed8f6770f765e36fbfbd9c5.jpg">
+<meta property="og:image" content="https://s-media-cache-ak0.pinimg.com/736x/17/05/20/170520d39fc11e6ba74f682709a24cc9.jpg">
+<meta property="og:updated_time" content="2015-06-14T07:52:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="When is Cheryl’s birthday?">
+<meta name="twitter:description" content="推理 第一句话确定：July 14  July 16  August 14 August 15  August 17(告诉B日期不可能为18，19，==&amp;gt;告诉A的月份不可能为May，June)第二句话确定：July 16 August 15 August 17(日期14有两个，B不可能确定，排除）第三句话确定：July 16（月份August有两个，A不能确定，推出July16)  ###">
+<meta name="twitter:image" content="https://s-media-cache-ak0.pinimg.com/736x/b2/d5/fd/b2d5fd051ed8f6770f765e36fbfbd9c5.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qunwang6.github.io/2015/05/11/CherylsBirthday/"/>
+
+
+
+
+
+  <title>When is Cheryl’s birthday? | 群点科技</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">群点科技</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技改变生活</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qunwang6.github.io/2015/05/11/CherylsBirthday/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qunwang6">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="群点科技">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">When is Cheryl’s birthday?</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-11T00:00:00+08:00">
+                2015-05-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/Mathematica/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematica</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://s-media-cache-ak0.pinimg.com/736x/b2/d5/fd/b2d5fd051ed8f6770f765e36fbfbd9c5.jpg" alt="When is Cheryl’s birthday?"></p>
+<h3 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h3><blockquote>
+<p>第一句话确定：July 14  July 16  August 14 August 15  August 17(告诉B日期不可能为18，19，==&gt;告诉A的月份不可能为May，June)<br>第二句话确定：July 16 August 15 August 17(日期14有两个，B不可能确定，排除）<br>第三句话确定：July 16（月份August有两个，A不能确定，推出July16)</p>
+</blockquote>
+<p>###<a href="https://www.khanacademy.org/math/recreational-math/puzzles/brain-teasers/v/cheryls-birthday" target="_blank" rel="noopener">Khanacademy</a><br><a id="more"></a><br><img src="https://s-media-cache-ak0.pinimg.com/736x/17/05/20/170520d39fc11e6ba74f682709a24cc9.jpg" alt=""></p>
+<h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p><a href="http://nbviewer.ipython.org/url/norvig.com/ipython/Cheryl.ipynb#" target="_blank" rel="noopener"></a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">DATES = [<span class="string">'May 15'</span>,    <span class="string">'May 16'</span>,    <span class="string">'May 19'</span>,</span><br><span class="line">        <span class="string">'June 17'</span>,   <span class="string">'June 18'</span>,</span><br><span class="line">        <span class="string">'July 14'</span>,   <span class="string">'July 16'</span>,</span><br><span class="line">      <span class="string">'August 14'</span>, <span class="string">'August 15'</span>, <span class="string">'August 17'</span>]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Month</span><span class="params">(date)</span>:</span> <span class="keyword">return</span> date.split()[<span class="number">0</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">Day</span><span class="params">(date)</span>:</span>   <span class="keyword">return</span> date.split()[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#print Month('May 15')</span></span><br><span class="line"><span class="comment">#out:May</span></span><br><span class="line"><span class="comment">#print Day('May 15')</span></span><br><span class="line"><span class="comment">#out:15</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">tell</span><span class="params">(part, possible_dates=DATES)</span>:</span></span><br><span class="line">    <span class="string">"Cheryl tells a part of her birthdate to someone; return a new list of possible dates that match the part."</span></span><br><span class="line">    <span class="keyword">return</span> [date <span class="keyword">for</span> date <span class="keyword">in</span> possible_dates <span class="keyword">if</span> part <span class="keyword">in</span> date]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">know</span><span class="params">(possible_dates)</span>:</span></span><br><span class="line">    <span class="string">"A person knows the birthdate if they have exactly one possible date."</span></span><br><span class="line">    <span class="keyword">return</span> len(possible_dates) == <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#print tell('May')</span></span><br><span class="line"><span class="comment">#out:['May 15', 'May 16', 'May 19']</span></span><br><span class="line"><span class="comment">#print tell('15')</span></span><br><span class="line"><span class="comment">#out:['May 15', 'August 15']</span></span><br><span class="line"><span class="comment">#print know(tell('15'))</span></span><br><span class="line"><span class="comment">#out:False</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cheryls_birthday</span><span class="params">(possible_dates=DATES)</span>:</span></span><br><span class="line">    <span class="string">"Return a list of the possible dates for which statements 3 to 5 are true."</span></span><br><span class="line">    <span class="keyword">return</span> filter(statements3to5, possible_dates)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">statements3to5</span><span class="params">(date)</span>:</span> <span class="keyword">return</span> statement3(date) <span class="keyword">and</span> statement4(date) <span class="keyword">and</span> statement5(date)</span><br><span class="line"></span><br><span class="line"><span class="comment">## TO DO: define statement3, statement4, statement5</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">statement3</span><span class="params">(date)</span>:</span></span><br><span class="line">    <span class="string">"Albert: I don't know when Cheryl's birthday is, but I know that Bernard does not know too."</span></span><br><span class="line">    possible_dates = tell(Month(date))</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">not</span> know(possible_dates)</span><br><span class="line">            <span class="keyword">and</span> all(<span class="keyword">not</span> know(tell(Day(d)))</span><br><span class="line">                    <span class="keyword">for</span> d <span class="keyword">in</span> possible_dates))</span><br><span class="line"></span><br><span class="line"><span class="comment">#print statement3('May 15')</span></span><br><span class="line"><span class="comment">#out:False</span></span><br><span class="line"><span class="comment">#print filter(statement3,DATES)</span></span><br><span class="line"><span class="comment">#out:['July 14', 'July 16', 'August 14', 'August 15', 'August 17']</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">statement4</span><span class="params">(date)</span>:</span></span><br><span class="line">    <span class="string">"Bernard: At first I don't know when Cheryl's birthday is, but I know now."</span></span><br><span class="line">    at_first = tell(Day(date))</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">not</span> know(at_first)</span><br><span class="line">            <span class="keyword">and</span> know(filter(statement3, at_first)))</span><br><span class="line"></span><br><span class="line"><span class="comment">#print filter(statement4,filter(statement3,DATES))</span></span><br><span class="line"><span class="comment">#out:['July 16', 'August 15', 'August 17']</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">statement5</span><span class="params">(date)</span>:</span></span><br><span class="line">    <span class="string">"Albert: Then I also know when Cheryl's birthday is."</span></span><br><span class="line">    <span class="keyword">return</span> know(filter(statement4, tell(Month(date))))</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> cheryls_birthday()</span><br><span class="line"><span class="comment">#out:['July 16']</span></span><br><span class="line"><span class="keyword">print</span> know(cheryls_birthday())</span><br><span class="line"><span class="comment">#out:True</span></span><br></pre></td></tr></table></figure>
+<h3 id="Mathematica-1"><a href="#Mathematica-1" class="headerlink" title="Mathematica(1)"></a>Mathematica(1)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line">(*</span><br><span class="line">Procedural answer to the question posted here:</span><br><span class="line">&quot;http://nbviewer.ipython.org/url/norvig.com/ipython/Cheryl.ipynb&quot;</span><br><span class="line"></span><br><span class="line">Doing this in other fun mathematica ways is left as an exercise for the reader :)</span><br><span class="line">*)</span><br><span class="line"></span><br><span class="line">In[665]:= str  = &quot;    May 15     May 16     May 19</span><br><span class="line">     June 17    June 18</span><br><span class="line">     July 14    July 16</span><br><span class="line">   August 14  August 15  August 17&quot; ;</span><br><span class="line"></span><br><span class="line">dates = Partition[StringSplit[str], 2]</span><br><span class="line"></span><br><span class="line">Out[666]= &#123;&#123;&quot;May&quot;, &quot;15&quot;&#125;, &#123;&quot;May&quot;, &quot;16&quot;&#125;, &#123;&quot;May&quot;, &quot;19&quot;&#125;, &#123;&quot;June&quot;,</span><br><span class="line">  &quot;17&quot;&#125;, &#123;&quot;June&quot;, &quot;18&quot;&#125;, &#123;&quot;July&quot;, &quot;14&quot;&#125;, &#123;&quot;July&quot;, &quot;16&quot;&#125;, &#123;&quot;August&quot;,</span><br><span class="line">  &quot;14&quot;&#125;, &#123;&quot;August&quot;, &quot;15&quot;&#125;, &#123;&quot;August&quot;, &quot;17&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">(* 3. albert didn&apos;t know when cheryl&apos;s birthday was, but</span><br><span class="line">knew bernard didn&apos;t know either. he has revealed that he&apos;s holding a</span><br><span class="line">month that does not permit bernard to immediately know. bernard would</span><br><span class="line">only immediately know if the day was unique in the list *)</span><br><span class="line"></span><br><span class="line">In[667]:=</span><br><span class="line"></span><br><span class="line">monthsWithUniqueDay =</span><br><span class="line"> GatherBy[dates, Last] // Select[Length[#] == 1 &amp;] // Catenate //</span><br><span class="line">  Map[First]</span><br><span class="line"></span><br><span class="line">Out[667]= &#123;&quot;May&quot;, &quot;June&quot;&#125;</span><br><span class="line"></span><br><span class="line">(* 4. bernard reveals his initial day was ambiguous, it</span><br><span class="line">mapped to multiple months *)</span><br><span class="line"></span><br><span class="line">In[668]:=</span><br><span class="line"></span><br><span class="line">ambiguousDays =</span><br><span class="line">  GatherBy[dates, Last] // Select[Length[#] &gt; 1 &amp;] // Catenate //</span><br><span class="line">    Map[Last] // Union;</span><br><span class="line"></span><br><span class="line">bernardInitial = dates // Select[MemberQ[ambiguousDays, Last[#] ] &amp;]</span><br><span class="line"></span><br><span class="line">Out[669]= &#123;&#123;&quot;May&quot;, &quot;15&quot;&#125;, &#123;&quot;May&quot;, &quot;16&quot;&#125;, &#123;&quot;June&quot;, &quot;17&quot;&#125;, &#123;&quot;July&quot;,</span><br><span class="line">  &quot;14&quot;&#125;, &#123;&quot;July&quot;, &quot;16&quot;&#125;, &#123;&quot;August&quot;, &quot;14&quot;&#125;, &#123;&quot;August&quot;,</span><br><span class="line">  &quot;15&quot;&#125;, &#123;&quot;August&quot;, &quot;17&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">(* 4.3 bernard has incorporated albert&apos;s information,</span><br><span class="line">ruling out any months with unique days *)</span><br><span class="line"></span><br><span class="line">In[670]:=</span><br><span class="line"></span><br><span class="line">bernardNoUniqueDays =</span><br><span class="line"> bernardInitial // Select[! MemberQ[monthsWithUniqueDay, First[#]] &amp;]</span><br><span class="line"></span><br><span class="line">Out[670]= &#123;&#123;&quot;July&quot;, &quot;14&quot;&#125;, &#123;&quot;July&quot;, &quot;16&quot;&#125;, &#123;&quot;August&quot;,</span><br><span class="line">  &quot;14&quot;&#125;, &#123;&quot;August&quot;, &quot;15&quot;&#125;, &#123;&quot;August&quot;, &quot;17&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">(* 4.6 bernard says this is good enough to give him the</span><br><span class="line">answer. so what days are potentially unambiguous for him, that are</span><br><span class="line">unique day numbers in the set? *)</span><br><span class="line"></span><br><span class="line">In[671]:=</span><br><span class="line"></span><br><span class="line">bernardCandidateDays =</span><br><span class="line"> Tally[bernardNoUniqueDays[[All, 2]]] // Select[Last[#] == 1 &amp;] //</span><br><span class="line">  Map[First]</span><br><span class="line"></span><br><span class="line">Out[671]= &#123;&quot;16&quot;, &quot;15&quot;, &quot;17&quot;&#125;</span><br><span class="line"></span><br><span class="line">(* since these are the unique day numbers bernard has, we</span><br><span class="line">know the final answer must be one of these month/day combinations *)</span><br><span class="line"></span><br><span class="line">In[672]:=</span><br><span class="line"></span><br><span class="line">bernardCandidateAnswers =</span><br><span class="line"> Select[bernardNoUniqueDays, MemberQ[bernardCandidateDays, Last@#] &amp;]</span><br><span class="line"></span><br><span class="line">Out[672]= &#123;&#123;&quot;July&quot;, &quot;16&quot;&#125;, &#123;&quot;August&quot;, &quot;15&quot;&#125;, &#123;&quot;August&quot;, &quot;17&quot;&#125;&#125;</span><br><span class="line"></span><br><span class="line">(* 5. albert says this is good enough to give *him* the answer. which</span><br><span class="line">means albert sees here an unambiguous month. What month is</span><br><span class="line">unambiguous in this set? because that&apos;s our answer *)</span><br><span class="line"></span><br><span class="line">Select[</span><br><span class="line"> GatherBy[bernardCandidateAnswers, First], Length[#] == 1 &amp;]</span><br><span class="line"></span><br><span class="line">Out[673]= &#123;&#123;&#123;&quot;July&quot;, &quot;16&quot;&#125;&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Mathematica-2"><a href="#Mathematica-2" class="headerlink" title="Mathematica(2)"></a>Mathematica(2)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">cand = &#123;&#123;&quot;May&quot;, 15&#125;, &#123;&quot;May&quot;, 16&#125;, &#123;&quot;May&quot;, 19&#125;, &#123;&quot;June&quot;, 17&#125;, &#123;&quot;June&quot;,</span><br><span class="line">    18&#125;, &#123;&quot;July&quot;, 14&#125;, &#123;&quot;July&quot;, 16&#125;, &#123;&quot;August&quot;, 14&#125;, &#123;&quot;August&quot;,</span><br><span class="line">    15&#125;, &#123;&quot;August&quot;, 17&#125;&#125;;</span><br><span class="line">c1[n_] :=</span><br><span class="line"> With[&#123;rem = Cases[Tally[n[[All, 2]]], &#123;x_, _?(# == 1 &amp;)&#125; :&gt; x]&#125;,</span><br><span class="line">  DeleteCases[</span><br><span class="line">   n, &#123;Alternatives @@ (Cases[n, &#123;_, Alternatives @@ rem&#125;][[All,</span><br><span class="line">        1]]), _&#125;]]</span><br><span class="line">c2[n_] :=</span><br><span class="line"> With[&#123;rem = Cases[Tally[n[[All, 2]]], &#123;x_, _?(# == 1 &amp;)&#125; :&gt; x]&#125;,</span><br><span class="line">  Cases[n, &#123;_, Alternatives @@ rem&#125;]]</span><br><span class="line">c3[n_] :=</span><br><span class="line"> With[&#123;rem = Cases[Tally[n[[All, 1]]], &#123;x_, _?(# == 1 &amp;)&#125; :&gt; x]&#125;,</span><br><span class="line">  Cases[n, &#123;Alternatives @@ rem, _&#125;]]</span><br><span class="line">Composition[</span><br><span class="line">  Row[&#123;&quot;Cheryl&apos;s Birthday is &quot;&#125;~Join~#, Spacer[2]] &amp;, #[[1]] &amp;, c3, c2,</span><br><span class="line">   c1][cand]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>cand</code> is candidate birthdays<br><code>c1</code> to <code>c3</code> are the clues from the three statements:(i) rule out months that have unique day (ii) rule out birthdays without unique days (iii) find remaining birthday which has unique month the rest is for “prettiness”</p>
+</blockquote>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><a href="http://nbviewer.ipython.org/url/norvig.com/ipython/Cheryl.ipynb#" target="_blank" rel="noopener">python 代码</a></li>
+<li><a href="https://www.khanacademy.org/math/recreational-math/puzzles/brain-teasers/v/cheryls-birthday" target="_blank" rel="noopener">Khanacademy</a></li>
+<li><a href="http://mathematica.stackexchange.com/questions/80890/solve-the-cheryls-birthday-puzzle-using-mathematica" target="_blank" rel="noopener">Mathematica</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/logic/" rel="tag"># logic</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Mathematica/" rel="tag"># Mathematica</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/05/09/codeVSpoetry/" rel="next" title="Code vs. Poetry">
+                <i class="fa fa-chevron-left"></i> Code vs. Poetry
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/17/CSS3D/" rel="prev" title="CSS Avengers Card with 3D rotation and neon effect">
+                CSS Avengers Card with 3D rotation and neon effect <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qunwang6</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qunwang6" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qunwang6" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qunwang6@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gmail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#推理"><span class="nav-number">1.</span> <span class="nav-text">推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python"><span class="nav-number">2.</span> <span class="nav-text">Python</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mathematica-1"><span class="nav-number">3.</span> <span class="nav-text">Mathematica(1)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mathematica-2"><span class="nav-number">4.</span> <span class="nav-text">Mathematica(2)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qunwang6</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

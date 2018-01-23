@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS,Cydia,Lua," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Activator Activator joedj/cmdivator  doc Tutorial: Create Complex Activator Macros Using Activate Command：jailbreak FishPhd/ActivatorScripting Activator Listeners 模拟触屏和SimulateTouch如何使用（小白求指教） - Devel">
+<meta name="keywords" content="iOS,Cydia,Lua">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activator">
+<meta property="og:url" content="https://qunwang6.github.io/2015/10/24/Activator/index.html">
+<meta property="og:site_name" content="群点科技">
+<meta property="og:description" content="Activator Activator joedj/cmdivator  doc Tutorial: Create Complex Activator Macros Using Activate Command：jailbreak FishPhd/ActivatorScripting Activator Listeners 模拟触屏和SimulateTouch如何使用（小白求指教） - Devel">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2015-10-24T12:06:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Activator">
+<meta name="twitter:description" content="Activator Activator joedj/cmdivator  doc Tutorial: Create Complex Activator Macros Using Activate Command：jailbreak FishPhd/ActivatorScripting Activator Listeners 模拟触屏和SimulateTouch如何使用（小白求指教） - Devel">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qunwang6.github.io/2015/10/24/Activator/"/>
+
+
+
+
+
+  <title>Activator | 群点科技</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">群点科技</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技改变生活</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qunwang6.github.io/2015/10/24/Activator/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qunwang6">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="群点科技">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Activator</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-10-24T00:00:00+08:00">
+                2015-10-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="Activator"><a href="#Activator" class="headerlink" title="Activator"></a>Activator</h3><ul>
+<li><a href="http://rpetrich.net/cydia/activator/" target="_blank" rel="noopener">Activator</a></li>
+<li><a href="https://github.com/joedj/cmdivator" target="_blank" rel="noopener">joedj/cmdivator</a></li>
+</ul>
+<h4 id="doc"><a href="#doc" class="headerlink" title="doc"></a>doc</h4><ul>
+<li><a href="https://www.reddit.com/r/jailbreak/comments/2a3ocj/tutorial_create_complex_activator_macros_using/" target="_blank" rel="noopener">Tutorial: Create Complex Activator Macros Using Activate Command：jailbreak</a></li>
+<li><a href="https://github.com/FishPhd/ActivatorScripting" target="_blank" rel="noopener">FishPhd/ActivatorScripting</a></li>
+<li><a href="http://junesiphone.com/actions/" target="_blank" rel="noopener">Activator Listeners</a></li>
+<li><a href="http://bbs.iosre.com/t/simulatetouch/267" target="_blank" rel="noopener">模拟触屏和SimulateTouch如何使用（小白求指教） - Development Discussion - iOSRE</a></li>
+<li><a href="http://bbs.iosre.com/t/topic/58/4" target="_blank" rel="noopener">关于逆触动精灵的几个疑问 - Development Discussion - iOSRE</a></li>
+</ul>
+<a id="more"></a>
+<h3 id="通过SSH解锁屏幕"><a href="#通过SSH解锁屏幕" class="headerlink" title="通过SSH解锁屏幕"></a>通过SSH解锁屏幕</h3><blockquote>
+<p>要安装 Cydia search : <code>simulate touch</code></p>
+</blockquote>
+<ul>
+<li><a href="http://api.iolate.kr/simulatetouch/" target="_blank" rel="noopener">SimulateTouch Reference</a></li>
+<li><a href="https://github.com/iolate/SimulateTouch" target="_blank" rel="noopener">iolate/SimulateTouch</a></li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">activator send libactivator.system.homebutton &amp;&amp; sleep 1 &amp;&amp; stouch swipe 200 300 700 300 0.2 1</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">stouch swipe 50 450 300 450 .3 1    //滑动解锁 向右</span><br><span class="line">stouch touch 100 125 1 //点击</span><br><span class="line"></span><br><span class="line">activator send libactivator.system.first-springboard-page  //返回屏幕第一页</span><br><span class="line">activator send com.apple.Preferences   //打开设置</span><br><span class="line">activator send libactivator.system.sleepbutton  //睡眠</span><br></pre></td></tr></table></figure>
+<h3 id="其他方式解锁屏幕"><a href="#其他方式解锁屏幕" class="headerlink" title="其他方式解锁屏幕"></a>其他方式解锁屏幕</h3><blockquote>
+<p>How to unlock iOS screen programmatically?<br>If we are talking about jailbreak then you can write a SpringBoard tweak that does this (iOS 7 only)<br><a href="http://stackoverflow.com/questions/21706050/how-to-unlock-ios-screen-programmatically" target="_blank" rel="noopener">jailbreak - How to unlock iOS screen programmatically? - Stack Overflow</a></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[[objc_getClass(&quot;SBBacklightController&quot;) sharedInstance] turnOnScreenFullyWithBacklightSource:0];</span><br><span class="line">[[objc_getClass(&quot;SBLockScreenManager&quot;) sharedInstance] unlockUIFromSource:0 withOptions:nil];</span><br></pre></td></tr></table></figure>
+<h3 id="lua"><a href="#lua" class="headerlink" title="lua"></a>lua</h3><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">os</span>.<span class="built_in">execute</span>(<span class="string">"activator send switch-off.com.a3tweaks.switch.vpn"</span>)</span><br><span class="line"><span class="built_in">os</span>.<span class="built_in">execute</span>(<span class="string">"activator send switch-on.com.a3tweaks.switch.bluetooth"</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="Activator-Listeners"><a href="#Activator-Listeners" class="headerlink" title="Activator Listeners"></a>Activator Listeners</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Sleepbutton Activator://send/libactivator.system.sleepbutton</span><br><span class="line">Store Activator://send/libactivator.settings.store</span><br><span class="line">Keypad Activator://send/libactivator.phone.keypad</span><br><span class="line">Safari Activator://send/libactivator.settings.safari</span><br><span class="line">Facetime Activator://send/libactivator.settings.facetime</span><br><span class="line">Increase-volume Activator://send/libactivator.audio.increase-volume</span><br><span class="line">Sounds Activator://send/libactivator.settings.sounds</span><br><span class="line">Dismiss Activator://send/libactivator.lockscreen.dismiss</span><br><span class="line">Next-track Activator://send/libactivator.ipod.next-track</span><br><span class="line">Notifications Activator://send/libactivator.settings.notifications</span><br><span class="line">Activate-control-center Activator://send/libactivator.system.activate-control-center</span><br><span class="line">Powerdown Activator://send/libactivator.system.powerdown</span><br><span class="line">Invoke-shutter Activator://send/libactivator.camera.invoke-shutter</span><br><span class="line">Wifi Activator://send/libactivator.settings.wifi</span><br><span class="line">Compose-tweet Activator://send/libactivator.twitter.compose-tweet</span><br><span class="line">Equalizer Activator://send/libactivator.settings.equalizer</span><br><span class="line">International Activator://send/libactivator.settings.international</span><br><span class="line">Reboot Activator://send/libactivator.system.reboot</span><br><span class="line">Virtual-assistant Activator://send/libactivator.settings.virtual-assistant</span><br><span class="line">Activate-notification-center Activator://send/libactivator.system.activate-notification-center</span><br><span class="line">Keyboard Activator://send/libactivator.settings.keyboard</span><br><span class="line">Pause-playback Activator://send/libactivator.ipod.pause-playback</span><br><span class="line">About Activator://send/libactivator.settings.about</span><br><span class="line">Recents Activator://send/libactivator.phone.recents</span><br><span class="line">Back Activator://send/libactivator.system.back</span><br><span class="line">Auto-lock Activator://send/libactivator.settings.auto-lock</span><br><span class="line">Safemode Activator://send/libactivator.system.safemode</span><br><span class="line">Contacts Activator://send/libactivator.phone.contacts</span><br><span class="line">Compose-message Activator://send/libactivator.mail.compose-message</span><br><span class="line">Dictation Activator://send/libactivator.keyboard.dictation</span><br><span class="line">Activate-switcher Activator://send/libactivator.system.activate-switcher</span><br><span class="line">Date-time Activator://send/libactivator.settings.date-time</span><br><span class="line">Vibrate Activator://send/libactivator.system.vibrate</span><br><span class="line">Favorites Activator://send/libactivator.phone.favorites</span><br><span class="line">Photos Activator://send/libactivator.settings.photos</span><br><span class="line">Facebook Activator://send/libactivator.settings.facebook</span><br><span class="line">Brightness-and-wallpaper Activator://send/libactivator.settings.brightness-and-wallpaper</span><br><span class="line">Vpn Activator://send/libactivator.settings.vpn</span><br><span class="line">Compose-post Activator://send/libactivator.facebook.compose-post</span><br><span class="line">Location-services Activator://send/libactivator.settings.location-services</span><br><span class="line">Toggle-playback Activator://send/libactivator.ipod.toggle-playback</span><br><span class="line">Twitter Activator://send/libactivator.settings.twitter</span><br><span class="line">Eclipse Activator://send/com.gmoran.eclipse</span><br><span class="line">Phone Activator://send/libactivator.settings.phone</span><br><span class="line">Accessibility Activator://send/libactivator.settings.accessibility</span><br><span class="line">Music Activator://send/libactivator.settings.music</span><br><span class="line">Voicemail Activator://send/libactivator.phone.voicemail</span><br><span class="line">Spotlight Activator://send/libactivator.system.spotlight</span><br><span class="line">Usage Activator://send/libactivator.settings.usage</span><br><span class="line">Compose-message Activator://send/libactivator.sms.compose-message</span><br><span class="line">Decrease-volume Activator://send/libactivator.audio.decrease-volume</span><br><span class="line">Compose-post Activator://send/libactivator.weibo.compose-post</span><br><span class="line">Show Activator://send/libactivator.lockscreen.show</span><br><span class="line">Resume-playback Activator://send/libactivator.ipod.resume-playback</span><br><span class="line">First-springboard-page Activator://send/libactivator.system.first-springboard-page</span><br><span class="line">Toggleweb Activator://send/com.booleanmagic.displayrecorder.toggleweb</span><br><span class="line">Activate-reachability Activator://send/libactivator.system.activate-reachability</span><br><span class="line">Bluetooth Activator://send/libactivator.settings.bluetooth</span><br><span class="line">Nothing Activator://send/libactivator.system.nothing</span><br><span class="line">Displayrecorder Activator://send/com.booleanmagic.displayrecorder</span><br><span class="line">Notes Activator://send/libactivator.settings.notes</span><br><span class="line">Homebutton Activator://send/libactivator.system.homebutton</span><br><span class="line">Toggle Activator://send/libactivator.lockscreen.toggle</span><br><span class="line">Cellular Activator://send/libactivator.settings.cellular</span><br><span class="line">General Activator://send/libactivator.settings.general</span><br><span class="line">Virtual-assistant Activator://send/libactivator.system.virtual-assistant</span><br><span class="line">Take-screenshot Activator://send/libactivator.system.take-screenshot</span><br><span class="line">Previous-track Activator://send/libactivator.ipod.previous-track</span><br><span class="line">Respring Activator://send/libactivator.system.respring</span><br><span class="line">Icloud Activator://send/libactivator.settings.icloud</span><br><span class="line">Com Activator://send/libactivator.mail.28.street.visions@yahoo.com</span><br><span class="line">Bluetooth Activator://send/switch-flip.com.a3tweaks.switch.bluetooth</span><br><span class="line">Bluetooth Activator://send/switch-off.com.a3tweaks.switch.bluetooth</span><br><span class="line">Bluetooth Activator://send/switch-on.com.a3tweaks.switch.bluetooth</span><br><span class="line">Settings Activator://send/switch-flip.com.a3tweaks.switch.settings</span><br><span class="line">Wifi Activator://send/switch-flip.com.a3tweaks.switch.wifi</span><br><span class="line">Wifi Activator://send/switch-off.com.a3tweaks.switch.wifi</span><br><span class="line">Wifi Activator://send/switch-on.com.a3tweaks.switch.wifi</span><br><span class="line">Location Activator://send/switch-flip.com.a3tweaks.switch.location</span><br><span class="line">Location Activator://send/switch-off.com.a3tweaks.switch.location</span><br><span class="line">Location Activator://send/switch-on.com.a3tweaks.switch.location</span><br><span class="line">Ringer Activator://send/switch-flip.com.a3tweaks.switch.ringer</span><br><span class="line">Ringer Activator://send/switch-off.com.a3tweaks.switch.ringer</span><br><span class="line">Ringer Activator://send/switch-on.com.a3tweaks.switch.ringer</span><br><span class="line">Cleanlockswitch Activator://send/switch-flip.com.alxdev.cleanlockswitch</span><br><span class="line">Cleanlockswitch Activator://send/switch-off.com.alxdev.cleanlockswitch</span><br><span class="line">Cleanlockswitch Activator://send/switch-on.com.alxdev.cleanlockswitch</span><br><span class="line">Rotation Activator://send/switch-flip.com.a3tweaks.switch.rotation</span><br><span class="line">Rotation Activator://send/switch-off.com.a3tweaks.switch.rotation</span><br><span class="line">Rotation Activator://send/switch-on.com.a3tweaks.switch.rotation</span><br><span class="line">Flipswitch Activator://send/switch-flip.com.pw5a29.speedintensifier.flipswitch</span><br><span class="line">Flipswitch Activator://send/switch-off.com.pw5a29.speedintensifier.flipswitch</span><br><span class="line">Flipswitch Activator://send/switch-on.com.pw5a29.speedintensifier.flipswitch</span><br><span class="line">Cellular-data Activator://send/switch-flip.com.a3tweaks.switch.cellular-data</span><br><span class="line">Cellular-data Activator://send/switch-off.com.a3tweaks.switch.cellular-data</span><br><span class="line">Cellular-data Activator://send/switch-on.com.a3tweaks.switch.cellular-data</span><br><span class="line">Respring Activator://send/switch-flip.com.a3tweaks.switch.respring</span><br><span class="line">Flashlight Activator://send/switch-flip.com.a3tweaks.switch.flashlight</span><br><span class="line">Flashlight Activator://send/switch-off.com.a3tweaks.switch.flashlight</span><br><span class="line">Flashlight Activator://send/switch-on.com.a3tweaks.switch.flashlight</span><br><span class="line">Rotation-lock Activator://send/switch-flip.com.a3tweaks.switch.rotation-lock</span><br><span class="line">Rotation-lock Activator://send/switch-off.com.a3tweaks.switch.rotation-lock</span><br><span class="line">Rotation-lock Activator://send/switch-on.com.a3tweaks.switch.rotation-lock</span><br><span class="line">Vibration Activator://send/switch-flip.com.a3tweaks.switch.vibration</span><br><span class="line">Vibration Activator://send/switch-off.com.a3tweaks.switch.vibration</span><br><span class="line">Vibration Activator://send/switch-on.com.a3tweaks.switch.vibration</span><br><span class="line">Do-not-disturb Activator://send/switch-flip.com.a3tweaks.switch.do-not-disturb</span><br><span class="line">Do-not-disturb Activator://send/switch-off.com.a3tweaks.switch.do-not-disturb</span><br><span class="line">Do-not-disturb Activator://send/switch-on.com.a3tweaks.switch.do-not-disturb</span><br><span class="line">Displayrecorder Activator://send/switch-flip.com.rpetrich.displayrecorder</span><br><span class="line">Displayrecorder Activator://send/switch-off.com.rpetrich.displayrecorder</span><br><span class="line">Displayrecorder Activator://send/switch-on.com.rpetrich.displayrecorder</span><br><span class="line">Airplane-mode Activator://send/switch-flip.com.a3tweaks.switch.airplane-mode</span><br><span class="line">Airplane-mode Activator://send/switch-off.com.a3tweaks.switch.airplane-mode</span><br><span class="line">Airplane-mode Activator://send/switch-on.com.a3tweaks.switch.airplane-mode</span><br><span class="line">Vpn Activator://send/switch-flip.com.a3tweaks.switch.vpn</span><br><span class="line">Vpn Activator://send/switch-off.com.a3tweaks.switch.vpn</span><br><span class="line">Vpn Activator://send/switch-on.com.a3tweaks.switch.vpn</span><br><span class="line">Lte Activator://send/switch-flip.com.a3tweaks.switch.lte</span><br><span class="line">Lte Activator://send/switch-off.com.a3tweaks.switch.lte</span><br><span class="line">Lte Activator://send/switch-on.com.a3tweaks.switch.lte</span><br><span class="line">Autolock Activator://send/switch-flip.com.a3tweaks.switch.autolock</span><br><span class="line">Autolock Activator://send/switch-off.com.a3tweaks.switch.autolock</span><br><span class="line">Autolock Activator://send/switch-on.com.a3tweaks.switch.autolock</span><br><span class="line">Hotspot Activator://send/switch-flip.com.a3tweaks.switch.hotspot</span><br><span class="line">Hotspot Activator://send/switch-off.com.a3tweaks.switch.hotspot</span><br><span class="line">Hotspot Activator://send/switch-on.com.a3tweaks.switch.hotspot</span><br><span class="line">@PACKAGENAME@@ Activator://send/switch-flip.@PACKAGENAME@@</span><br><span class="line">@PACKAGENAME@@ Activator://send/switch-off.@PACKAGENAME@@</span><br><span class="line">@PACKAGENAME@@ Activator://send/switch-on.@PACKAGENAME@@</span><br><span class="line">Auto-brightness Activator://send/switch-flip.com.a3tweaks.switch.auto-brightness</span><br><span class="line">Auto-brightness Activator://send/switch-off.com.a3tweaks.switch.auto-brightness</span><br><span class="line">Auto-brightness Activator://send/switch-on.com.a3tweaks.switch.auto-brightness</span><br><span class="line">Test Activator://send/libactivator.call.1.test</span><br><span class="line">Test Activator://send/libactivator.text.32.test</span><br><span class="line">Calcbot Activator://send/com.tapbots.Calcbot</span><br><span class="line">Terminal Activator://send/com.googlecode.mobileterminal.Terminal</span><br><span class="line">VoiceMemos Activator://send/com.apple.VoiceMemos</span><br><span class="line">Iphone Activator://send/com.ebay.iphone</span><br><span class="line">CameraPlus Activator://send/com.taptaptap.CameraPlus</span><br><span class="line">Iclarified Activator://send/com.iclarified.iclarified</span><br><span class="line">Reminders Activator://send/com.apple.reminders</span><br><span class="line">Youtube Activator://send/com.google.ios.youtube</span><br><span class="line">Vimeo Activator://send/com.vimeo</span><br><span class="line">Ipad Activator://send/com.adobe.photoshop.mix.ipad</span><br><span class="line">Ruler Activator://send/idans.Ruler</span><br><span class="line">Mobilecal Activator://send/com.apple.mobilecal</span><br><span class="line">Terminal Activator://send/ws.hbang.Terminal</span><br><span class="line">Wordpress Activator://send/org.wordpress</span><br><span class="line">Pinterest Activator://send/pinterest</span><br><span class="line">Swiftever Activator://send/net.swiftkey.swiftever</span><br><span class="line">Facebook Activator://send/com.facebook.Facebook</span><br><span class="line">Gmail Activator://send/com.google.Gmail</span><br><span class="line">Dropbox Activator://send/com.getdropbox.Dropbox</span><br><span class="line">Iphone Activator://send/com.vine.iphone</span><br><span class="line">Tapatalk Activator://send/com.quoord.Tapatalk</span><br><span class="line">Mobilephone Activator://send/com.apple.mobilephone</span><br><span class="line">Videos Activator://send/com.apple.videos</span><br><span class="line">Pandora Activator://send/com.pandora</span><br><span class="line">Buffer Activator://send/com.buffer.buffer</span><br><span class="line">Tadaa Activator://send/net.tadaa.tadaa</span><br><span class="line">Skype Activator://send/com.skype.skype</span><br><span class="line">Messenger Activator://send/com.facebook.Messenger</span><br><span class="line">Mobiletimer Activator://send/com.apple.mobiletimer</span><br><span class="line">Maps Activator://send/com.apple.Maps</span><br><span class="line">Icleanerpro Activator://send/com.exile90.icleanerpro</span><br><span class="line">Weather Activator://send/com.apple.weather</span><br><span class="line">Tumblr Activator://send/com.tumblr.tumblr</span><br><span class="line">Smpro Activator://send/com.plusblog.smpro</span><br><span class="line">Youdoodle Activator://send/com.digitalruby.youdoodle</span><br><span class="line">Fmip1 Activator://send/com.apple.mobileme.fmip1</span><br><span class="line">Lat-n-Long Activator://send/com.nicoll55.Lat-n-Long</span><br><span class="line">Ifile Activator://send/eu.heinelt.ifile</span><br><span class="line">LinkedIn Activator://send/com.linkedin.LinkedIn</span><br><span class="line">ScoreCenter Activator://send/com.espn.ScoreCenter</span><br><span class="line">Tweetie2 Activator://send/com.atebits.Tweetie2</span><br><span class="line">Stumbleupon Activator://send/stumbleupon</span><br><span class="line">Alienblue Activator://send/com.reddit.alienblue</span><br><span class="line">Path Activator://send/com.path.Path</span><br><span class="line">WhatsApp Activator://send/net.whatsapp.WhatsApp</span><br><span class="line">Homescreen-Designer Activator://send/com.jailpod.Homescreen-Designer</span><br><span class="line">MobileStore Activator://send/com.apple.MobileStore</span><br><span class="line">TWC Activator://send/com.weather.TWC</span><br><span class="line">PPClient Activator://send/com.yourcompany.PPClient</span><br><span class="line">Cydia Activator://send/com.saurik.Cydia</span><br><span class="line">Shazam Activator://send/com.shazam.Shazam</span><br><span class="line">Main Activator://send/com.statcounter.main</span><br><span class="line">Mobilenotes Activator://send/com.apple.mobilenotes</span><br><span class="line">Libactivator Activator://send/libactivator</span><br><span class="line">TouchApp Activator://send/com.soundcloud.TouchApp</span><br><span class="line">Client Activator://send/com.spotify.client</span><br><span class="line">BofA Activator://send/com.bankofamerica.BofA</span><br><span class="line">MailChimp Activator://send/com.theRocketScienceGroup.mailChimp</span><br><span class="line">Health Activator://send/com.apple.Health</span><br><span class="line">Preferences Activator://send/com.apple.Preferences</span><br><span class="line">Compass Activator://send/com.apple.compass</span><br><span class="line">Gamecenter Activator://send/com.apple.gamecenter</span><br><span class="line">Meerkat Activator://send/com.meerkat</span><br><span class="line">Moviebox3 Activator://send/com.trendico.moviebox3</span><br><span class="line">AppStore Activator://send/com.apple.AppStore</span><br><span class="line">Instagram Activator://send/com.burbn.instagram</span><br><span class="line">Ios Activator://send/com.google.chrome.ios</span><br><span class="line">Twitch Activator://send/tv.twitch</span><br><span class="line">CocoaTop Activator://send/ru.domo.CocoaTop</span><br><span class="line">Respring+ Activator://send/com.nicoll55.respring+</span><br><span class="line">MacID Activator://send/com.kanecheshire.MacID</span><br><span class="line">TuneInRadio Activator://send/com.tunein.TuneInRadio</span><br><span class="line">Behance Activator://send/com.behance.Behance</span><br><span class="line">Podcasts Activator://send/com.apple.podcasts</span><br><span class="line">GooglePlus Activator://send/com.google.GooglePlus</span><br><span class="line">Music Activator://send/com.apple.Music</span><br><span class="line">Mobileslideshow Activator://send/com.apple.mobileslideshow</span><br><span class="line">Loader Activator://send/io.pangu.loader</span><br><span class="line">Weather Activator://send/com.yahoo.weather</span><br><span class="line">BytaFont2 Activator://send/com.bytafont.BytaFont2</span><br><span class="line">Calculator Activator://send/com.apple.calculator</span><br><span class="line">Pages Activator://send/com.apple.Pages</span><br><span class="line">Xin Activator://send/com.tencent.xin</span><br><span class="line">AR7 Activator://send/com.ar7.AR7</span><br><span class="line">Snapseedforipad Activator://send/com.niksoftware.snapseedforipad</span><br><span class="line">Ifttt Activator://send/com.ifttt.ifttt</span><br><span class="line">Configapp Activator://send/com.kstreich-dev.3gunrestrictor.configapp</span><br><span class="line">Telegraph Activator://send/ph.telegra.Telegraph</span><br><span class="line">MobileAddressBook Activator://send/com.apple.MobileAddressBook</span><br><span class="line">Blogger Activator://send/com.google.Blogger</span><br><span class="line">Passbook Activator://send/com.apple.Passbook</span><br><span class="line">Viber Activator://send/com.viber</span><br><span class="line">Stocks Activator://send/com.apple.stocks</span><br><span class="line">Camera Activator://send/com.apple.camera</span><br><span class="line">Tweetbot3 Activator://send/com.tapbots.Tweetbot3</span><br><span class="line">Mobilesafari Activator://send/com.apple.mobilesafari</span><br><span class="line">Facetime Activator://send/com.apple.facetime</span><br><span class="line">Tips Activator://send/com.apple.tips</span><br><span class="line">SnapStats Activator://send/com.quynh.SnapStats</span><br><span class="line">Mobilemail Activator://send/com.apple.mobilemail</span><br><span class="line">Speedtest Activator://send/com.ookla.speedtest</span><br><span class="line">Picaboo Activator://send/com.toyopagroup.picaboo</span><br><span class="line">Onepassword-ios Activator://send/com.agilebits.onepassword-ios</span><br><span class="line">PageAdminApp Activator://send/com.facebook.PageAdminApp</span><br><span class="line">IBooks Activator://send/com.apple.iBooks</span><br><span class="line">ModMyi Activator://send/com.modmyi.ModMyi</span><br><span class="line">MobileSMS Activator://send/com.apple.MobileSMS</span><br><span class="line">Texttone:Minuet Activator://send/libactivator.ringtone.texttone:Minuet</span><br><span class="line">Texttone:Glass Activator://send/libactivator.ringtone.texttone:Glass</span><br><span class="line">Texttone:Circles Activator://send/libactivator.ringtone.texttone:Circles</span><br><span class="line">Texttone:Sent Mail Activator://send/libactivator.ringtone.texttone:Sent Mail</span><br><span class="line">Texttone:Spell Activator://send/libactivator.ringtone.texttone:Spell</span><br><span class="line">Texttone:Bamboo Activator://send/libactivator.ringtone.texttone:Bamboo</span><br><span class="line">Texttone:Electronic Activator://send/libactivator.ringtone.texttone:Electronic</span><br><span class="line">Texttone:Anticipate Activator://send/libactivator.ringtone.texttone:Anticipate</span><br><span class="line">Texttone:Tri-tone Activator://send/libactivator.ringtone.texttone:Tri-tone</span><br><span class="line">Texttone:Note Activator://send/libactivator.ringtone.texttone:Note</span><br><span class="line">Texttone:Sherwood Forest Activator://send/libactivator.ringtone.texttone:Sherwood Forest</span><br><span class="line">Texttone:Update Activator://send/libactivator.ringtone.texttone:Update</span><br><span class="line">Texttone:Popcorn Activator://send/libactivator.ringtone.texttone:Popcorn</span><br><span class="line">Texttone:Choo Choo Activator://send/libactivator.ringtone.texttone:Choo Choo</span><br><span class="line">Texttone:Input Activator://send/libactivator.ringtone.texttone:Input</span><br><span class="line">Texttone:Descent Activator://send/libactivator.ringtone.texttone:Descent</span><br><span class="line">Texttone:New Mail Activator://send/libactivator.ringtone.texttone:New Mail</span><br><span class="line">Texttone:Noir Activator://send/libactivator.ringtone.texttone:Noir</span><br><span class="line">Texttone:Keys Activator://send/libactivator.ringtone.texttone:Keys</span><br><span class="line">Texttone:Chime Activator://send/libactivator.ringtone.texttone:Chime</span><br><span class="line">Texttone:Telegraph Activator://send/libactivator.ringtone.texttone:Telegraph</span><br><span class="line">Texttone:Text-Message-Alert-In-Conversation Activator://send/libactivator.ringtone.texttone:Text-Message-Alert-In-Conversation</span><br><span class="line">Texttone:Calypso Activator://send/libactivator.ringtone.texttone:Calypso</span><br><span class="line">Texttone:Complete Activator://send/libactivator.ringtone.texttone:Complete</span><br><span class="line">Texttone:Typewriters Activator://send/libactivator.ringtone.texttone:Typewriters</span><br><span class="line">Texttone:Tiptoes Activator://send/libactivator.ringtone.texttone:Tiptoes</span><br><span class="line">Texttone:Fanfare Activator://send/libactivator.ringtone.texttone:Fanfare</span><br><span class="line">Texttone:Synth Activator://send/libactivator.ringtone.texttone:Synth</span><br><span class="line">Texttone:Aurora Activator://send/libactivator.ringtone.texttone:Aurora</span><br><span class="line">Texttone:Ladder Activator://send/libactivator.ringtone.texttone:Ladder</span><br><span class="line">Texttone:Air Drop Invitation Activator://send/libactivator.ringtone.texttone:Air Drop Invitation</span><br><span class="line">Texttone:Suspense Activator://send/libactivator.ringtone.texttone:Suspense</span><br><span class="line">Texttone:Hello Activator://send/libactivator.ringtone.texttone:Hello</span><br><span class="line">Texttone:Calendar Alert Activator://send/libactivator.ringtone.texttone:Calendar Alert</span><br><span class="line">Texttone:Sent Tweet Activator://send/libactivator.ringtone.texttone:Sent Tweet</span><br><span class="line">Texttone:Alert Activator://send/libactivator.ringtone.texttone:Alert</span><br><span class="line">Texttone:Sharing Post Activator://send/libactivator.ringtone.texttone:Sharing Post</span><br><span class="line">Texttone:News Flash Activator://send/libactivator.ringtone.texttone:News Flash</span><br><span class="line">Texttone:Horn Activator://send/libactivator.ringtone.texttone:Horn</span><br><span class="line">Texttone:Bell Activator://send/libactivator.ringtone.texttone:Bell</span><br><span class="line">Texttone:Bloom Activator://send/libactivator.ringtone.texttone:Bloom</span><br><span class="line">Itunes:F2AE1D68-A687-48FA-A74F-40F840059315 Activator://send/libactivator.ringtone.itunes:F2AE1D68-A687-48FA-A74F-40F840059315</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Cydia/" rel="tag"># Cydia</a>
+          
+            <a href="/tags/Lua/" rel="tag"># Lua</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/08/21/http2/" rel="next" title="HTTP2">
+                <i class="fa fa-chevron-left"></i> HTTP2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/01/14/torch/" rel="prev" title="Torch">
+                Torch <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qunwang6</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qunwang6" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qunwang6" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qunwang6@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gmail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Activator"><span class="nav-number">1.</span> <span class="nav-text">Activator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#doc"><span class="nav-number">1.1.</span> <span class="nav-text">doc</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过SSH解锁屏幕"><span class="nav-number">2.</span> <span class="nav-text">通过SSH解锁屏幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他方式解锁屏幕"><span class="nav-number">3.</span> <span class="nav-text">其他方式解锁屏幕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lua"><span class="nav-number">4.</span> <span class="nav-text">lua</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Activator-Listeners"><span class="nav-number">5.</span> <span class="nav-text">Activator Listeners</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qunwang6</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

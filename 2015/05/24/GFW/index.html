@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="GFW,DNS,host," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="ip,镜像站寻找可用ip,修改系统host  Google 镜像站搜集 - Techzero1http://www.findspace.name/adds/hosts2   更改网络DNS Hello DNS (可直接翻墙) 12DNS1: 123.56.46.123DNS2: 182.254.185.148  任我行DNS(可直接翻墙) 1121.201.13.176">
+<meta name="keywords" content="GFW,DNS,host">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GFW">
+<meta property="og:url" content="https://qunwang6.github.io/2015/05/24/GFW/index.html">
+<meta property="og:site_name" content="群点科技">
+<meta property="og:description" content="ip,镜像站寻找可用ip,修改系统host  Google 镜像站搜集 - Techzero1http://www.findspace.name/adds/hosts2   更改网络DNS Hello DNS (可直接翻墙) 12DNS1: 123.56.46.123DNS2: 182.254.185.148  任我行DNS(可直接翻墙) 1121.201.13.176">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2015-06-10T12:04:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="GFW">
+<meta name="twitter:description" content="ip,镜像站寻找可用ip,修改系统host  Google 镜像站搜集 - Techzero1http://www.findspace.name/adds/hosts2   更改网络DNS Hello DNS (可直接翻墙) 12DNS1: 123.56.46.123DNS2: 182.254.185.148  任我行DNS(可直接翻墙) 1121.201.13.176">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qunwang6.github.io/2015/05/24/GFW/"/>
+
+
+
+
+
+  <title>GFW | 群点科技</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">群点科技</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技改变生活</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qunwang6.github.io/2015/05/24/GFW/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qunwang6">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="群点科技">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">GFW</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-24T00:00:00+08:00">
+                2015-05-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GFW/" itemprop="url" rel="index">
+                    <span itemprop="name">GFW</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="ip-镜像站"><a href="#ip-镜像站" class="headerlink" title="ip,镜像站"></a>ip,镜像站</h3><p>寻找可用ip,修改系统host</p>
+<ul>
+<li><a href="http://www.itechzero.com/google-mirror-sites-collect.html" target="_blank" rel="noopener">Google 镜像站搜集 - Techzero</a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://www.findspace.name/adds/hosts2</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="更改网络DNS"><a href="#更改网络DNS" class="headerlink" title="更改网络DNS"></a>更改网络DNS</h3><ul>
+<li><p>Hello DNS (可直接翻墙)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DNS1: 123.56.46.123</span><br><span class="line">DNS2: 182.254.185.148</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><a href="http://dns.yc.is/" target="_blank" rel="noopener">任我行DNS</a>(可直接翻墙)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">121.201.13.176</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><a href="https://github.com/openervpn/openerdns" target="_blank" rel="noopener">OpenerDNS</a>(可直接翻墙,已被封)</li>
+<li>以下DNS可加速网络访问速度<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">OpenDns</span><br><span class="line">208.67.222.222</span><br><span class="line">208.67.220.220</span><br><span class="line">阿里巴巴DNS</span><br><span class="line">223.5.5.5</span><br><span class="line">223.6.6.6</span><br><span class="line">国内的114.114.114.114，</span><br><span class="line">国外Google的8.8.8.8</span><br><span class="line">CNNIC公共云解析服务（SDNS）地址为：</span><br><span class="line">首选DNS服务器：1.2.4.8</span><br><span class="line">备用DNS服务器：210.2.4.8</span><br><span class="line">V2EX DNS</span><br><span class="line">199.91.73.222</span><br><span class="line">178.79.131.110</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="自建DNS服务器"><a href="#自建DNS服务器" class="headerlink" title="自建DNS服务器"></a>自建DNS服务器</h3><ul>
+<li>在自己的电脑里建立DNS服务器，比较麻烦，待续。。。</li>
+</ul>
+<h3 id="用pac翻墙"><a href="#用pac翻墙" class="headerlink" title="用pac翻墙"></a>用pac翻墙</h3><p>推荐: <a href="https://www.ftq.me/" target="_blank" rel="noopener">佛跳墙</a></p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><ul>
+<li>在未被封锁的云端服务器上建立代理服务，通过代理服务器访问被封锁的网站</li>
+</ul>
+<h3 id="代理软件"><a href="#代理软件" class="headerlink" title="代理软件"></a>代理软件</h3><p>最常用，最简单，最后写重点介绍。</p>
+<ul>
+<li><p><a href="http://shadowsocks.org/en/download/clients.html" target="_blank" rel="noopener">ShadowSocks</a><br><strong> shadowsocks账号免费获取 </strong><br><a href="https://free.gfw.im/code.php" target="_blank" rel="noopener">潜形匿影</a><br><a href="http://miaoss.pw/login.php" target="_blank" rel="noopener">Xmiao</a><br><a href="https://ssnode.com/user/index.php" target="_blank" rel="noopener">ssnode</a><br><a href="https://www.v2ex.com/go/shadowsocks" target="_blank" rel="noopener">v2ex论坛关注账号分享</a></p>
+</li>
+<li><p><a href="https://arnaud.sinaapp.com/" target="_blank" rel="noopener">Arnaud’s 公共 ShadowSocks 共享计划</a>(获取账号需要点智商)</p>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.uproxy.org/" target="_blank" rel="noopener">uproxy</a><blockquote>
+<p>Google资助开发的P2P代理软件,开放测试中，目前软件还只是 alpha版本，只支持Chrome和Firefox。uProxy是一个浏览器扩展，能将所有浏览器的流量重定向通过第三方计算机，它不像VPN那样依赖于专用代理服务器，而是在你和朋友之间通过点对点连接建立个人VPN服务。如果你身处一个有防火墙的国家，而你的朋友生活在一个无防火墙的自由国度，那么你可以与朋友建立连接通过对方的网络冲浪，绕过屏蔽。uProxyu是基于WebRTC技术的实现，由华盛顿大学开发，得到了 Google Ideas的资助。</p>
+</blockquote>
+</li>
+<li><p><a href="https://chrome.google.com/webstore/detail/%E6%97%B6%E7%A9%BA%E9%9A%A7%E9%81%93/hfinpallhogllbckokkaefjjcjhjpnln/reviews?utm_source=chrome-ntp-icon" target="_blank" rel="noopener">时空隧道</a><br>Google Chrome翻墙插件<br><a href="https://chrome.google.com/webstore/detail/hfinpallhogllbckokkaefjjcjhjpnln" target="_blank" rel="noopener">国外网址</a><br><a href="http://www.suidao.in/invi/PuGbvk" target="_blank" rel="noopener">国内网址</a><br>时空隧道邀请码 PuGbvk</p>
+<p>待续。。。</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GFW/" rel="tag"># GFW</a>
+          
+            <a href="/tags/DNS/" rel="tag"># DNS</a>
+          
+            <a href="/tags/host/" rel="tag"># host</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/05/23/sublime/" rel="next" title="Sublime 3笔记">
+                <i class="fa fa-chevron-left"></i> Sublime 3笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/26/SwiftStyleGuide/" rel="prev" title="Swift Style guide">
+                Swift Style guide <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qunwang6</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qunwang6" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qunwang6" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qunwang6@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gmail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ip-镜像站"><span class="nav-number">1.</span> <span class="nav-text">ip,镜像站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更改网络DNS"><span class="nav-number">2.</span> <span class="nav-text">更改网络DNS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自建DNS服务器"><span class="nav-number">3.</span> <span class="nav-text">自建DNS服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用pac翻墙"><span class="nav-number">4.</span> <span class="nav-text">用pac翻墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理"><span class="nav-number">5.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代理软件"><span class="nav-number">6.</span> <span class="nav-text">代理软件</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qunwang6</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

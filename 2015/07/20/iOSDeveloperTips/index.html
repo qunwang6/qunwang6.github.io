@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS,Swift," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="documents中文版 Apple 官方 Swift 教程 numbbbbb/the-swift-programming-language-in-chinese  Start Developing iOS Apps TodayStart Developing iOS Apps Today: Setup Hacking with Swift Hacking with Swift – learn t">
+<meta name="keywords" content="iOS,Swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS developer tips">
+<meta property="og:url" content="https://qunwang6.github.io/2015/07/20/iOSDeveloperTips/index.html">
+<meta property="og:site_name" content="群点科技">
+<meta property="og:description" content="documents中文版 Apple 官方 Swift 教程 numbbbbb/the-swift-programming-language-in-chinese  Start Developing iOS Apps TodayStart Developing iOS Apps Today: Setup Hacking with Swift Hacking with Swift – learn t">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2015-12-18T02:09:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS developer tips">
+<meta name="twitter:description" content="documents中文版 Apple 官方 Swift 教程 numbbbbb/the-swift-programming-language-in-chinese  Start Developing iOS Apps TodayStart Developing iOS Apps Today: Setup Hacking with Swift Hacking with Swift – learn t">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qunwang6.github.io/2015/07/20/iOSDeveloperTips/"/>
+
+
+
+
+
+  <title>iOS developer tips | 群点科技</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">群点科技</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技改变生活</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qunwang6.github.io/2015/07/20/iOSDeveloperTips/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qunwang6">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="群点科技">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">iOS developer tips</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-07-20T00:00:00+08:00">
+                2015-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="documents"><a href="#documents" class="headerlink" title="documents"></a>documents</h2><h3 id="中文版-Apple-官方-Swift-教程"><a href="#中文版-Apple-官方-Swift-教程" class="headerlink" title="中文版 Apple 官方 Swift 教程"></a>中文版 Apple 官方 Swift 教程</h3><ul>
+<li><a href="https://github.com/numbbbbb/the-swift-programming-language-in-chinese" target="_blank" rel="noopener">numbbbbb/the-swift-programming-language-in-chinese</a></li>
+</ul>
+<h3 id="Start-Developing-iOS-Apps-Today"><a href="#Start-Developing-iOS-Apps-Today" class="headerlink" title="Start Developing iOS Apps Today"></a>Start Developing iOS Apps Today</h3><p><a href="https://developer.apple.com/library/ios/referencelibrary/GettingStarted/RoadMapiOS/" target="_blank" rel="noopener">Start Developing iOS Apps Today: Setup</a></p>
+<h3 id="Hacking-with-Swift"><a href="#Hacking-with-Swift" class="headerlink" title="Hacking with Swift"></a>Hacking with Swift</h3><ul>
+<li><a href="https://www.hackingwithswift.com/" target="_blank" rel="noopener">Hacking with Swift – learn to code iPhone and iPad apps with free Swift tutorials</a></li>
+<li><a href="https://github.com/twostraws/HackingWithSwift" target="_blank" rel="noopener">twostraws/HackingWithSwift</a></li>
+</ul>
+<h3 id="Teaching-App-Development-with-Swift"><a href="#Teaching-App-Development-with-Swift" class="headerlink" title="Teaching App Development with Swift"></a>Teaching App Development with Swift</h3><p><a href="https://swifteducation.github.io/teaching_app_development_with_swift/" target="_blank" rel="noopener">Teaching App Development with Swift - Swift Education</a></p>
+<ul>
+<li><a href="https://www.hackingwithswift.com/swift2" target="_blank" rel="noopener">What’s new in Swift 2 – Hacking with Swift</a></li>
+<li><a href="https://www.hackingwithswift.com/ios9" target="_blank" rel="noopener">What’s new in iOS 9 – Hacking with Swift</a></li>
+<li><a href="https://www.hackingwithswift.com/ios9-tutorials" target="_blank" rel="noopener">Free iOS 9 tutorials – Hacking with Swift</a></li>
+</ul>
+<a id="more"></a>
+<h3 id="Swift-A-Day"><a href="#Swift-A-Day" class="headerlink" title="Swift A Day"></a>Swift A Day</h3><ul>
+<li><a href="http://swiftaday.com/" target="_blank" rel="noopener">Swift A Day.</a></li>
+<li><a href="https://github.com/lindadong/swift-a-day" target="_blank" rel="noopener">lindadong/swift-a-day</a></li>
+</ul>
+<h3 id="Create-Custom-Keyboard-for-iOS-8"><a href="#Create-Custom-Keyboard-for-iOS-8" class="headerlink" title="Create Custom Keyboard for iOS 8"></a>Create Custom Keyboard for iOS 8</h3><p>Alexei Baboulevitch is developing a custom keyboard for iOS 8 with Swift:</p>
+<pre><code>– No bitmaps! Everything is rendered using CoreGraphics.
+– Dynamic layouts! All the keys are laid out programmatically.
+– Auto-capitalization, period shortcut, keyboard clicks.
+</code></pre><p><a href="https://github.com/archagon/tasty-imitation-keyboard" target="_blank" rel="noopener">tasty-imitation-keyboard</a></p>
+<h3 id="TestFlight——完美的iOS-app测试方案"><a href="#TestFlight——完美的iOS-app测试方案" class="headerlink" title="TestFlight——完美的iOS app测试方案"></a>TestFlight——完美的iOS app测试方案</h3><p><a href="http://onevcat.com/2012/01/testflight/" target="_blank" rel="noopener">介绍</a></p>
+<h3 id="The-official-Swift-style-guide-for-raywenderlich-com"><a href="#The-official-Swift-style-guide-for-raywenderlich-com" class="headerlink" title="The official Swift style guide for raywenderlich.com."></a>The official Swift style guide for raywenderlich.com.</h3><p><a href="https://github.com/raywenderlich/swift-style-guide" target="_blank" rel="noopener">raywenderlich/swift-style-guide</a></p>
+<h3 id="learning"><a href="#learning" class="headerlink" title="learning"></a>learning</h3><ul>
+<li><a href="http://wuzhiwei.net/ios_dev_trap_and_solution/" target="_blank" rel="noopener">iOS游戏开发和提交的一些「坑」和「解决方案」 | Tim’s Blog</a></li>
+<li><a href="http://blog.fir.im/fir_im_weekly151027/" target="_blank" rel="noopener">fir.im Weekly - iOS开发中的Git流程</a></li>
+<li><a href="https://github.com/100mango/zen/blob/master/Swift%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BB%8EObjective-C%E5%88%B0Swift/Swift%E5%AD%A6%E4%B9%A0%EF%BC%9A%E4%BB%8EObjective-C%E5%88%B0Swift.md" target="_blank" rel="noopener">zen/Swift学习：从Objective-C到Swift.md at master · 100mango/zen</a></li>
+<li><a href="http://oleb.net/blog/2014/07/swift-strings/" target="_blank" rel="noopener">Strings in Swift – Ole Begemann</a></li>
+<li><a href="http://oleb.net/blog/2014/08/replacing-launch-images-with-storyboards/" target="_blank" rel="noopener">Replacing Launch Images With Storyboards – Ole Begemann</a></li>
+<li><a href="http://oleb.net/blog/2015/06/swift-standard-library-playground/" target="_blank" rel="noopener">Swift Standard Library.playground – Ole Begemann</a></li>
+<li><a href="http://oleb.net/blog/2014/04/understanding-uiscrollview/" target="_blank" rel="noopener">Understanding UIScrollView – Ole Begemann</a></li>
+<li><a href="http://oleb.net/blog/2015/06/c-callbacks-in-swift/" target="_blank" rel="noopener">C Callbacks in Swift – Ole Begemann</a></li>
+<li><a href="https://medium.com/bpxl-craft/from-objective-c-to-swift-a-journey-c8732c3a3c6" target="_blank" rel="noopener">From Objective-C to Swift: A Journey — BPXL Craft — Medium</a></li>
+<li><a href="http://www.raywenderlich.com/97936/address-book-tutorial-swift-ios" target="_blank" rel="noopener">Address Book Tutorial in Swift and iOS - Ray Wenderlich</a></li>
+<li><a href="https://github.com/objc-zen/objc-zen-book" target="_blank" rel="noopener">objc-zen/objc-zen-book</a></li>
+<li><a href="https://github.com/WildDylan/appleSample" target="_blank" rel="noopener">appleSample</a></li>
+<li><a href="https://github.com/burczyk/XcodeSwiftSnippets" target="_blank" rel="noopener">XcodeSwiftSnippets</a></li>
+<li><a href="http://khanlou.com/2015/06/why-i-dont-write-swift/" target="_blank" rel="noopener">Why I don’t write Swift | Khanlou.com</a></li>
+<li><a href="http://geek.csdn.net/news/detail/35909" target="_blank" rel="noopener">Swift 语言指南－Issue 35 - 极客头条 - CSDN.NET</a></li>
+<li><a href="http://masilotti.com/ui-testing-xcode-7/" target="_blank" rel="noopener">UI Testing in Xcode 7 · Masilotti.com</a></li>
+<li><a href="http://www.russbishop.net/swift-2-simd" target="_blank" rel="noopener">Russ Bishop - Swift 2: SIMD</a></li>
+<li><a href="http://ios-blog.co.uk/tutorials/swift-create-a-login-app-with-parse-com-pfuser-keychain-locksmith/" target="_blank" rel="noopener">Swift: Create a login app with Parse.com PFUser &amp; Keychain Locksmith - iOS-Blog</a></li>
+<li><a href="http://www.cocoachina.com/ios/20150604/11996.html" target="_blank" rel="noopener">自己动手写一个 iOS 网络请求库（四）——快速文件上传</a></li>
+<li><a href="http://imtx.me/archives/1940.html" target="_blank" rel="noopener">那些用 Swift 写的 App 们（不断更新中…） | I’m TualatriX</a></li>
+<li><a href="http://www.jianshu.com/p/106c37105453" target="_blank" rel="noopener">iOS9 Day-by-Day :: Day 3 :: Storyboard References - 简书</a></li>
+<li><a href="http://www.jianshu.com/p/c2799b3835f8" target="_blank" rel="noopener">关于 Swift 2.0 - 语言新特性与革新 - 简书</a></li>
+<li><a href="http://www.jianshu.com/p/8e472caa446d" target="_blank" rel="noopener">iOS开发知识点总结【持续更新】 - 简书</a></li>
+<li><a href="https://github.com/objc-zen/objc-zen-book" target="_blank" rel="noopener">objc-zen/objc-zen-book</a></li>
+<li><a href="http://www.jianshu.com/p/ae9a579905e0" target="_blank" rel="noopener">Swift 中使用 SwiftyJSON 制作一个比特币价格 APP - 简书</a></li>
+<li><a href="https://github.com/teodorpatras/EasyTipView" target="_blank" rel="noopener">teodorpatras/EasyTipView</a></li>
+<li><a href="http://news.oneapm.com/parse-swift-instagram/" target="_blank" rel="noopener">如何用 Parse 和 Swift 搭建一个像 Instagram 那样的应用？</a></li>
+<li><a href="http://www.jianshu.com/p/e733f2df6b46" target="_blank" rel="noopener">10步成为专业iOS开发者——新手向，从零起步 - 简书</a></li>
+<li><a href="http://ios-animations-by-emails.com/posts/2015-july" target="_blank" rel="noopener">iOS Animations by Emails | Fun with Gradients and Masks</a></li>
+<li><a href="http://www.mokacoding.com/blog/functor-applicative-monads-in-pictures/" target="_blank" rel="noopener">Swift Functors, Applicatives, and Monads in Pictures | mokacoding</a></li>
+<li><a href="http://blog.zymr.com/how-to-use-restkit-in-swift-for-ios-development" target="_blank" rel="noopener">How to Use RestKit in Swift for iOS Development</a></li>
+<li><a href="http://www.sososwift.com/" target="_blank" rel="noopener">SoSoSwift - All the Swift Tutorials in One Place.</a></li>
+<li><a href="http://masilotti.com/ui-testing-xcode-7/" target="_blank" rel="noopener">UI Testing in Xcode 7 · Masilotti.com</a></li>
+<li><a href="http://oleb.net/blog/2014/04/understanding-uiscrollview/" target="_blank" rel="noopener">Understanding UIScrollView – Ole Begemann</a></li>
+<li><a href="http://oleb.net/blog/2014/08/replacing-launch-images-with-storyboards/" target="_blank" rel="noopener">Replacing Launch Images With Storyboards – Ole Begemann</a></li>
+<li><a href="http://oleb.net/blog/2014/07/swift-strings/" target="_blank" rel="noopener">Strings in Swift – Ole Begemann</a></li>
+<li><a href="http://oleb.net/blog/2015/06/c-callbacks-in-swift/" target="_blank" rel="noopener">C Callbacks in Swift – Ole Begemann</a></li>
+<li><a href="http://www.raywenderlich.com/97936/address-book-tutorial-swift-ios" target="_blank" rel="noopener">Address Book Tutorial in Swift and iOS - Ray Wenderlich</a></li>
+<li><a href="http://lvwenhan.com/ios/458.html" target="_blank" rel="noopener">如何用代码控制以不同屏幕方向打开新页面【iOS】 - 岁寒</a></li>
+<li><a href="https://github.com/greatabel/Objective-CLearn" target="_blank" rel="noopener">greatabel/Objective-CLearn/相关例子，代码，方便查找复用</a></li>
+<li><a href="https://github.com/qinjx/30min_guides/blob/master/ios.md" target="_blank" rel="noopener">iOS开发60分钟入门</a></li>
+<li><a href="https://github.com/shijiangkai/iOS-Programming-Sharing" target="_blank" rel="noopener">shijiangkai/iOS-Programming-Sharing</a></li>
+<li><a href="http://zhuanlan.zhihu.com/xitucircle/20236993" target="_blank" rel="noopener">[稀土掘金日报] 带你玩转 iOS9，iOS开发也有春天 - 稀土 - 知乎专栏</a></li>
+<li><a href="http://www.ioscookies.com/" target="_blank" rel="noopener">iOS Cookies | A hand curated collection of iOS libraries written in Swift</a></li>
+<li><a href="https://realm.io/news/danny-keogan-swift-cryptography/" target="_blank" rel="noopener">CommonCrypto in Swift, with Danny Keogan - Realm is a mobile database: a replacement for SQLite &amp; Core Data</a></li>
+</ul>
+<hr>
+<h2 id="News"><a href="#News" class="headerlink" title="News"></a>News</h2><h3 id="Xcode-6-3-for-OS-X-10-9"><a href="#Xcode-6-3-for-OS-X-10-9" class="headerlink" title="Xcode 6.3 for OS X 10.9"></a>Xcode 6.3 for OS X 10.9</h3><p><a href="https://github.com/landonf/XcodePostFacto" target="_blank" rel="noopener">landonf/XcodePostFacto</a></p>
+<blockquote>
+<p>到 <a href="https://github.com/landonf/XcodePostFacto" target="_blank" rel="noopener">https://github.com/landonf/XcodePostFacto</a> 下好 XcodePostFacto 的源码之后，在 Xcode 中打开，去菜单栏选择 Product - Scheme - xpf-bootstrap，再点 Build。<br>在左侧 Sidebar 找到 Products 文件夹，展开，右键点 xpf-bootstrap.framework，选择在 Finder 中显示。<br>然后打开 Terminal，env DYLD_INSERT_LIBRARIES=(编译好 framework 的绝对路径)/xpf-bootstrap.framework/xpf-bootstrap /Applications/Xcode.app/Contents/MacOS/Xcode<br>可以在 Mavericks 下写 Apple Watch/iOS 8.3 的 app 了</p>
+</blockquote>
+<h3 id="Xcode-7"><a href="#Xcode-7" class="headerlink" title="Xcode 7"></a>Xcode 7</h3><ul>
+<li><a href="http://adcdownload.apple.com/WWDC_2015/Xcode_7_beta/Xcode_7_beta_Release_Notes.pdf" target="_blank" rel="noopener">Xcode 7 beta Release Notes - Xcode_7_beta_Release_Notes.pdf</a></li>
+</ul>
+<h3 id="What’s-new-in-Xcode-7"><a href="#What’s-new-in-Xcode-7" class="headerlink" title="What’s new in Xcode 7"></a>What’s new in Xcode 7</h3><p><a href="https://news.ycombinator.com/item?id=9681697" target="_blank" rel="noopener">What’s new in Xcode 7 | Hacker News</a></p>
+<h3 id="Swift-2-0"><a href="#Swift-2-0" class="headerlink" title="Swift 2.0"></a>Swift 2.0</h3><ul>
+<li><a href="http://www.csdn.net/article/2015-06-09/2824909-xcode-7-beta-and-swift" target="_blank" rel="noopener">Xcode 7 beta发布，Swift 2.0带来哪些新变化？-CSDN.NET</a></li>
+<li><a href="http://www.raywenderlich.com/108522/whats-new-in-swift-2" target="_blank" rel="noopener">What’s New in Swift 2 - Ray Wenderlich</a></li>
+<li><a href="http://ebb.org/bkuhn/blog/2015/06/15/apple-is-not-our-friend.html" target="_blank" rel="noopener">Why Greet Apple’s Swift 2.0 With Open Arms? - Bradley M. Kuhn ( Brad ) ( bkuhn )</a></li>
+<li><a href="http://natashatherobot.com/swift-2-pattern-matching-unwrapping-multiple-optionals/" target="_blank" rel="noopener">Swift 2 Pattern Matching: Unwrapping Multiple Optionals</a></li>
+<li><a href="https://craiggrummitt.wordpress.com/2015/06/13/func-parameters-in-swift-2-0/" target="_blank" rel="noopener">Func parameters in Swift 2.0 | Before I forget…</a></li>
+</ul>
+<h3 id="iOS-8-3-to-iOS-9-0-API-Differences"><a href="#iOS-8-3-to-iOS-9-0-API-Differences" class="headerlink" title="iOS 8.3 to iOS 9.0 API Differences"></a>iOS 8.3 to iOS 9.0 API Differences</h3><p> <a href="https://developer.apple.com/library/prerelease/ios/releasenotes/General/iOS90APIDiffs/index.html#//apple_ref/doc/uid/TP40016222" target="_blank" rel="noopener">iOS 8.3 to iOS 9.0 API Differences</a></p>
+<hr>
+<h2 id="Libraries"><a href="#Libraries" class="headerlink" title="Libraries"></a>Libraries</h2><h3 id="List-of-iOS-Top-1000-Libraries"><a href="#List-of-iOS-Top-1000-Libraries" class="headerlink" title="List of iOS Top 1000 Libraries"></a>List of iOS Top 1000 Libraries</h3><p><a href="https://github.com/iamdaiyuan/ios_top_1000" target="_blank" rel="noopener">iamdaiyuan/ios_top_1000</a></p>
+<h3 id="Libraries-Used-in-the-Top-100-iOS-Apps"><a href="#Libraries-Used-in-the-Top-100-iOS-Apps" class="headerlink" title="Libraries Used in the Top 100 iOS Apps"></a>Libraries Used in the Top 100 iOS Apps</h3><p><a href="https://medium.com/ios-os-x-development/libraries-used-in-the-top-100-ios-apps-5b845ad927b7" target="_blank" rel="noopener">Libraries Used in the Top 100 iOS Apps — iOS App Development — Medium</a></p>
+<h3 id="27-iOS-open-source-libraries"><a href="#27-iOS-open-source-libraries" class="headerlink" title="27 iOS open source libraries"></a>27 iOS open source libraries</h3><p><a href="https://medium.com/ios-os-x-development/27-ios-open-source-libraries-to-skyrocket-your-development-301b67d3124c" target="_blank" rel="noopener">27 iOS open source libraries to skyrocket your development. — iOS App Development — Medium</a></p>
+<h3 id="自己总结的iOS、mac开源项目及库"><a href="#自己总结的iOS、mac开源项目及库" class="headerlink" title="自己总结的iOS、mac开源项目及库"></a>自己总结的iOS、mac开源项目及库</h3><p><a href="https://github.com/Tim9Liu9/TimLiu-iOS" target="_blank" rel="noopener">Tim9Liu9/TimLiu-iOS</a></p>
+<h3 id="Elegant-HTTP-Networking-in-Swift"><a href="#Elegant-HTTP-Networking-in-Swift" class="headerlink" title="Elegant HTTP Networking in Swift"></a>Elegant HTTP Networking in Swift</h3><ul>
+<li><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="noopener">Alamofire/Alamofire</a></li>
+</ul>
+<p>###Flappy Bird in Swift<br><a href="https://github.com/fullstackio/FlappySwift" target="_blank" rel="noopener">FlappySwift</a></p>
+<p>###Gesture recognizer tool<br><a href="https://github.com/didierbrun/DBPathRecognizer" target="_blank" rel="noopener">DBPathRecognizer</a></p>
+<p>###Open Source Weather App in Swift<br><a href="https://github.com/Mav3r1ck/Project-RainMan" target="_blank" rel="noopener">Project-RainMan</a></p>
+<p>###Convert UIImage to ASCII<br><a href="https://github.com/bkoc/BKAsciiImage" target="_blank" rel="noopener">BKAsciiImage</a></p>
+<p>###KZPlayground<br><a href="https://github.com/krzysztofzablocki/KZPlayground" target="_blank" rel="noopener">Playgrounds for Objective-C</a></p>
+<p>###Flipping Menu<br>Flipping menu system written in Swift. Uses @IBDesignable for quick and easy implementation.<br><a href="https://github.com/ziligy/JGFlipMenu" target="_blank" rel="noopener">JGFlipMenu</a></p>
+<p>###Researching ResearchKit<br><a href="http://petersteinberger.com/blog/2015/researching-researchkit/" target="_blank" rel="noopener">Researching ResearchKit</a></p>
+<p>###移动开发支付SDK<br><a href="https://pingxx.com/?features" target="_blank" rel="noopener">Ping++</a></p>
+<h3 id="Microsoft-TouchDevelop"><a href="#Microsoft-TouchDevelop" class="headerlink" title="Microsoft TouchDevelop"></a>Microsoft TouchDevelop</h3><p><a href="https://github.com/Microsoft/TouchDevelop" target="_blank" rel="noopener">TouchDevelop</a></p>
+<blockquote>
+<p>TouchDevelop is a touch-friendly app creation environment for iPad, iPhone, Android, Windows, Mac, Linux. Our mobile-friendly editor makes coding fun, even on your phone or tablet!</p>
+</blockquote>
+<h3 id="React-UI-Components-for-OS-X-El-Capitan-and-Windows-10"><a href="#React-UI-Components-for-OS-X-El-Capitan-and-Windows-10" class="headerlink" title="React UI Components for OS X El Capitan and Windows 10"></a>React UI Components for OS X El Capitan and Windows 10</h3><ul>
+<li><a href="https://github.com/gabrielbull/react-desktop" target="_blank" rel="noopener">gabrielbull/react-desktop</a></li>
+</ul>
+<p>###Apple Beta 版软件计划<br><a href="https://appleseed.apple.com/sp/betaprogram/welcome?locale=zh" target="_blank" rel="noopener">Apple Beta 版软件计划</a></p>
+<h3 id="Duet-Display-的运行原理"><a href="#Duet-Display-的运行原理" class="headerlink" title="Duet Display 的运行原理"></a>Duet Display 的运行原理</h3><p><strong> <a href="https://github.com/rsms/peertalk" target="_blank" rel="noopener">PeerTalk</a> </strong></p>
+<blockquote>
+<p>由瑞典技术人员 <a href="http://rsms.me/about/" target="_blank" rel="noopener">Rasmus Andersson</a>开发的一种可通过 USB 基座和 TCP 协议，实现 iOS / Mac 间通讯的 Cocoa（Objective-C）库，这是 Duet Display 实现「通过数据线输出视频」的核心技术，也是与同类应用在实现方式上最大的差别。和原始的设备通讯原理相比，PeerTalk 可以在 <code>热插拔</code>状态下，实现自动断开和连接的效果.</p>
+</blockquote>
+<p><strong> <a href="https://theiphonewiki.com/wiki/Usbmux" target="_blank" rel="noopener">usbmux</a> </strong></p>
+<blockquote>
+<p>iTunes / iOS 设备间进行同步的 usbmux 系统和只有通过逆向所得的私有 API</p>
+</blockquote>
+<p><strong> <a href="https://github.com/zakk4223/CocoaSplit" target="_blank" rel="noopener">CocoaSplit</a> </strong></p>
+<blockquote>
+<p>CocoaSplit，一种用于视频流媒体服务的技术，有网友通过它成功地实现了 YouTube 视频直播，而 Duet Display 的 Mac 客户端就用了 CocoaSplit</p>
+</blockquote>
+<p><strong> <a href="https://github.com/BradLarson/GPUImage" target="_blank" rel="noopener">GPUImage</a> </strong></p>
+<blockquote>
+<p>GPUImage，一个由 Brad Larson 托管在 Github 上的基于 BSD 开源的 iOS 库，主要用于实现滤镜、摄像头实时滤镜等图像效果（很多「滤镜」软件都使用了这一技术），由于其处理效果是基于 GPU（图形处理器）而不是 CPU（中央处理器）的，所以一般情况下，它的处理性能更好。那么在 Duet Display 这款软件中，GPUImage 的作用发挥在了视频输出上，以便让 iOS 端的显示效果更好。</p>
+</blockquote>
+<ul>
+<li>References:<a href="http://sspai.com/27806" target="_blank" rel="noopener">一款刚上架的屏幕拓展应用为何迅速走红？浅谈 Duet Display 背后的技术 - 少数派 - 高质量的应用推荐媒体</a></li>
+</ul>
+<h3 id="Swift-HTTP-for-Humans"><a href="#Swift-HTTP-for-Humans" class="headerlink" title="Swift HTTP for Humans"></a>Swift HTTP for Humans</h3><p><a href="https://github.com/JustHTTP/Just" target="_blank" rel="noopener">JustHTTP/Just</a></p>
+<h3 id="swifter"><a href="#swifter" class="headerlink" title="swifter"></a>swifter</h3><p><a href="https://github.com/glock45/swifter" target="_blank" rel="noopener">glock45/swifter</a></p>
+<blockquote>
+<p>Tiny http server engine written in Swift programming language.</p>
+</blockquote>
+<h3 id="Layers-based-charts-library-for-iOS"><a href="#Layers-based-charts-library-for-iOS" class="headerlink" title="Layers based charts library for iOS"></a>Layers based charts library for iOS</h3><p><a href="https://github.com/i-schuetz/SwiftCharts" target="_blank" rel="noopener">i-schuetz/SwiftCharts</a></p>
+<p>###EasyIOS<br><a href="https://github.com/EasyIOS/EasyIOS-Swift" target="_blank" rel="noopener">EasyIOS/EasyIOS-Swift</a><br>MVVM+HTML+LiveLoad 来开发 IOS<br><a href="http://www.v2ex.com/t/194118#reply16" target="_blank" rel="noopener">EasyIOS-Swift 版本发布， MVVM+HTML+LiveLoad 来开发 IOS - V2EX</a></p>
+<p>###background images</p>
+<ul>
+<li><a href="https://github.com/qrohlf/trianglify" target="_blank" rel="noopener">qrohlf/trianglify</a></li>
+<li><a href="https://github.com/qrohlf/trianglify-generator" target="_blank" rel="noopener">qrohlf/trianglify-generator</a></li>
+<li><a href="http://qrohlf.com/trianglify-generator/" target="_blank" rel="noopener">Trianglify Generator</a></li>
+<li><a href="http://qrohlf.com/trianglify/" target="_blank" rel="noopener">Trianglify by @qrohlf</a></li>
+</ul>
+<h3 id="ResearchKit"><a href="#ResearchKit" class="headerlink" title="ResearchKit"></a>ResearchKit</h3><blockquote>
+<p>requires Xcode 6.3 or newer</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/ResearchKit/ResearchKit" target="_blank" rel="noopener">ResearchKit/ResearchKit</a></li>
+<li><a href="http://www.raywenderlich.com/104575/researchkit-tutorial-with-swift" target="_blank" rel="noopener">ResearchKit Tutorial with Swift: Getting Started - Ray Wenderlich</a></li>
+</ul>
+<h3 id="the-Swift-HTTP-library-use-a-so-esay-API"><a href="#the-Swift-HTTP-library-use-a-so-esay-API" class="headerlink" title="the Swift HTTP library use a so esay API"></a>the Swift HTTP library use a so esay API</h3><p><a href="https://github.com/lcepy/STNetWork" target="_blank" rel="noopener">lcepy/STNetWork</a></p>
+<h3 id="Microsoft-Project-Oxford-Home"><a href="#Microsoft-Project-Oxford-Home" class="headerlink" title="Microsoft Project Oxford Home"></a>Microsoft Project Oxford Home</h3><p><a href="http://www.projectoxford.ai/" target="_blank" rel="noopener">Microsoft Project Oxford Home</a></p>
+<h3 id="A-message-bar-for-iOS-written-in-Swift"><a href="#A-message-bar-for-iOS-written-in-Swift" class="headerlink" title="A message bar for iOS written in Swift"></a>A message bar for iOS written in Swift</h3><p><a href="https://github.com/exchangegroup/Dodo" target="_blank" rel="noopener">exchangegroup/Dodo</a></p>
+<h3 id="Open-Source-iOS-Game-created-in-SpriteKit-with-Swift"><a href="#Open-Source-iOS-Game-created-in-SpriteKit-with-Swift" class="headerlink" title="Open Source iOS Game created in SpriteKit with Swift"></a>Open Source iOS Game created in SpriteKit with Swift</h3><p><a href="https://github.com/Mav3r1ck/Orbit7" target="_blank" rel="noopener">Mav3r1ck/Orbit7</a></p>
+<hr>
+<h3 id="EasyAnimation"><a href="#EasyAnimation" class="headerlink" title="EasyAnimation"></a>EasyAnimation</h3><p><a href="https://github.com/icanzilb/EasyAnimation" target="_blank" rel="noopener">icanzilb/EasyAnimation</a></p>
+<h3 id="让人眼前一亮的刷新"><a href="#让人眼前一亮的刷新" class="headerlink" title="让人眼前一亮的刷新"></a>让人眼前一亮的刷新</h3><p><a href="https://github.com/MartinRGB/Replace-iOS" target="_blank" rel="noopener">MartinRGB/Replace-iOS</a></p>
+<h3 id="An-iOS-refresh-control-with-gear-animation"><a href="#An-iOS-refresh-control-with-gear-animation" class="headerlink" title="An iOS refresh control with gear animation"></a>An iOS refresh control with gear animation</h3><p><a href="https://github.com/micazeve/MAGearRefreshControl" target="_blank" rel="noopener">micazeve/MAGearRefreshControl</a></p>
+<h3 id="UIStackView-Playground"><a href="#UIStackView-Playground" class="headerlink" title="UIStackView-Playground"></a>UIStackView-Playground</h3><p><a href="https://github.com/jstart/UIStackView-Playground" target="_blank" rel="noopener">jstart/UIStackView-Playground</a></p>
+<blockquote>
+<p>A playground demonstrating some of the key features of UIStackView</p>
+</blockquote>
+<h3 id="UIStackView-Playground-jstart-UIStackView-Playground"><a href="#UIStackView-Playground-jstart-UIStackView-Playground" class="headerlink" title="UIStackView-Playground jstart/UIStackView-Playground"></a>UIStackView-Playground <a href="https://github.com/jstart/UIStackView-Playground" target="_blank" rel="noopener">jstart/UIStackView-Playground</a></h3><h3 id="Smart-Notifications"><a href="#Smart-Notifications" class="headerlink" title="Smart Notifications"></a>Smart Notifications</h3><p><a href="http://latis.io/" target="_blank" rel="noopener">Latis - Smart Notifications. Engage your users on the right device, at the right time.</a></p>
+<h3 id="3D-Force-Touch"><a href="#3D-Force-Touch" class="headerlink" title="3D Force Touch"></a>3D Force Touch</h3><ul>
+<li><a href="https://medium.com/produkt-blog/3d-force-touch-beyond-peek-pop-c448edc2b1f5#.lyggax9pu" target="_blank" rel="noopener">3D Force Touch: beyond peek &amp; pop — Produkt Blog — Medium</a></li>
+</ul>
+<h3 id="f-lux"><a href="#f-lux" class="headerlink" title="f.lux"></a>f.lux</h3><h2 id="Sideloading-f-lux-on-iOS-with-Xcode-7"><a href="#Sideloading-f-lux-on-iOS-with-Xcode-7" class="headerlink" title="* Sideloading f.lux on iOS with Xcode 7"></a>* <a href="https://justgetflux.com/sideload/" target="_blank" rel="noopener">Sideloading f.lux on iOS with Xcode 7</a></h2><h2 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h2><h3 id="iOS9-GUI-template"><a href="#iOS9-GUI-template" class="headerlink" title="iOS9 GUI template"></a>iOS9 GUI template</h3><p><a href="http://codemotionapps.com/free-ios9-gui-template-for-illustrator/" target="_blank" rel="noopener">Free Vector iOS9 GUI template for illustrator - Codemotion</a></p>
+<h3 id="iOS-9-UIKit-for-Sketch"><a href="#iOS-9-UIKit-for-Sketch" class="headerlink" title="iOS 9 UIKit for Sketch"></a>iOS 9 UIKit for Sketch</h3><ul>
+<li><a href="https://github.com/philipamour/ios9-uikit" target="_blank" rel="noopener">philipamour/ios9-uikit</a></li>
+</ul>
+<h3 id="Free-to-do-app-UI-kit-for-Photoshop-and-Sketch"><a href="#Free-to-do-app-UI-kit-for-Photoshop-and-Sketch" class="headerlink" title="Free to-do app UI kit for Photoshop and Sketch"></a>Free to-do app UI kit for Photoshop and Sketch</h3><ul>
+<li><a href="http://www.invisionapp.com/do" target="_blank" rel="noopener">Free to-do app UI kit for Photoshop and Sketch</a></li>
+</ul>
+<h3 id="font"><a href="#font" class="headerlink" title="font"></a>font</h3><p><a href="https://github.com/supermarin/YosemiteSanFranciscoFont" target="_blank" rel="noopener">supermarin/YosemiteSanFranciscoFont</a></p>
+<h3 id="XCTest"><a href="#XCTest" class="headerlink" title="XCTest"></a>XCTest</h3><ul>
+<li><a href="https://github.com/joemasilotti/XCTest-Documentation" target="_blank" rel="noopener">joemasilotti/XCTest-Documentation</a></li>
+<li><a href="http://masilotti.com/ui-testing-xcode-7/" target="_blank" rel="noopener">UI Testing in Xcode 7 · Masilotti.com</a></li>
+</ul>
+<hr>
+<h2 id="icon"><a href="#icon" class="headerlink" title="icon"></a>icon</h2><h3 id="Automator-Workflows"><a href="#Automator-Workflows" class="headerlink" title="Automator Workflows"></a>Automator Workflows</h3><p><a href="https://github.com/sparanoid/automator-workflows#create-app-iconset" target="_blank" rel="noopener">sparanoid/automator-workflows</a></p>
+<h3 id="图标生成"><a href="#图标生成" class="headerlink" title="图标生成"></a>图标生成</h3><blockquote>
+<p>为 App 生成各种大小 Logo 的网站。支持 Android, iOS, WatchKit</p>
+</blockquote>
+<p><a href="http://makeappicon.com/" target="_blank" rel="noopener">Makeappicon - Generate app icons of all sizes with a click!</a></p>
+<h3 id="自动生成-3x-2x-1x-图片"><a href="#自动生成-3x-2x-1x-图片" class="headerlink" title="自动生成@3x @2x @1x 图片"></a>自动生成@3x @2x @1x 图片</h3><ul>
+<li><a href="http://www.v2ex.com/t/211768#reply15" target="_blank" rel="noopener">xcode 管理图片资源太不方便，于是写了个工具用来自动生成@3x @2x @1x 图片 - V2EX</a></li>
+<li><a href="https://github.com/alexazhou/XcodeImageBuilder" target="_blank" rel="noopener">alexazhou/XcodeImageBuilder</a></li>
+</ul>
+<hr>
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><h3 id="跨平台开发"><a href="#跨平台开发" class="headerlink" title="跨平台开发"></a>跨平台开发</h3><ul>
+<li><a href="http://xamarin.com/" target="_blank" rel="noopener">Mobile App Development &amp; App Creation Software - Xamarin</a></li>
+<li><a href="https://github.com/xamarin" target="_blank" rel="noopener">Xamarin</a></li>
+<li><a href="http://www.microsoft.com/taiwan/vstudio/Xamarin/" target="_blank" rel="noopener">Xamarin 跨平台 App 開發 | Visual Studio + C# + Xamarin = iOS / Android / Windows App</a></li>
+<li><a href="http://www.buildinsider.net/enterprise/sansanreport/0601" target="_blank" rel="noopener">10分間で分かった気になれるXamarin概要 - Build Insider</a></li>
+<li><a href="http://geek.csdn.net/news/detail/35933" target="_blank" rel="noopener">跨平台自动构建工具v1.0.2 发布 - 极客头条 - CSDN.NET</a></li>
+<li><a href="https://github.com/Microsoft/WinObjC" target="_blank" rel="noopener">Microsoft/WinObjC/Objective-C for Windows</a></li>
+<li><a href="https://dev.windows.com/en-us/bridges/ios" target="_blank" rel="noopener">The Windows Bridge for iOS</a></li>
+</ul>
+<h3 id="常用开发软件"><a href="#常用开发软件" class="headerlink" title="常用开发软件"></a>常用开发软件</h3><ul>
+<li><a href="http://www.paintcodeapp.com/origami" target="_blank" rel="noopener">PaintCode</a></li>
+<li><a href="https://affinity.serif.com/en-gb/" target="_blank" rel="noopener">Affinity Designer - Professional graphic design software for the Mac</a></li>
+<li><a href="https://medium.com/@JuliusHuijnk/a-true-ux-tool-9e892b0dc1a5" target="_blank" rel="noopener">A true UX tool — Medium</a></li>
+</ul>
+<h3 id="Visual-Studio-Code"><a href="#Visual-Studio-Code" class="headerlink" title="Visual Studio Code"></a>Visual Studio Code</h3><p><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code - Code Editing. Redefined.</a></p>
+<p>###网页版 constraints 代码生成工具<br><a href="http://constraints.icodeforlove.com/" target="_blank" rel="noopener">iOS/Mac Autolayout Constraints</a></p>
+<h3 id="SketchExporter"><a href="#SketchExporter" class="headerlink" title="SketchExporter"></a>SketchExporter</h3><ul>
+<li><a href="https://github.com/gliyao/SketchExporter" target="_blank" rel="noopener">gliyao/SketchExporter</a></li>
+</ul>
+<blockquote>
+<p>只要做好 Sketch 文档，就可以自动填入 Xcode 的 assets</p>
+</blockquote>
+<hr>
+<h2 id="Watch"><a href="#Watch" class="headerlink" title="Watch"></a>Watch</h2><h3 id="Apple-Watch"><a href="#Apple-Watch" class="headerlink" title="Apple Watch"></a>Apple Watch</h3><ul>
+<li><a href="http://www.totem.training/swift-ios-tips-tricks-tutorials-blog/apple-watch-lessons-learned" target="_blank" rel="noopener">WatchKit Lessons Learned — Swift + iOS 8 Developer Training</a></li>
+<li><a href="http://blog.mikeswanson.com/post/118262770484/watchkit-controller-life-cycle" target="_blank" rel="noopener">Mike Swanson’s Blog • WatchKit Controller Life Cycle</a></li>
+<li><a href="http://blog.mikeswanson.com/post/117807821714/watchkit-development-tips" target="_blank" rel="noopener">Mike Swanson’s Blog • WatchKit Development Tips</a></li>
+<li><a href="http://blog.mikeswanson.com/post/118580394879/watchkit-image-tips" target="_blank" rel="noopener">Mike Swanson’s Blog • WatchKit Image Tips</a></li>
+<li><a href="http://developer.telerik.com/featured/tips-for-apple-watch-development-with-xcode-watchkit/" target="_blank" rel="noopener">Tips for Apple Watch Development with Xcode &amp; WatchKit -Telerik Developer Network</a></li>
+</ul>
+<hr>
+<h2 id="Visual-Programing"><a href="#Visual-Programing" class="headerlink" title="Visual Programing"></a>Visual Programing</h2><h3 id="可视化编程"><a href="#可视化编程" class="headerlink" title="可视化编程"></a>可视化编程</h3><ul>
+<li><a href="https://itunes.apple.com/app/toy-engine/id993811069?mt=8" target="_blank" rel="noopener">Toy Engine - Make Games With Visual Scripting on the App Store on iTunes</a></li>
+</ul>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li><a href="http://www.v2ex.com/t/236858#reply0" target="_blank" rel="noopener">苹果私有 API 检查工具开源项目 - V2EX</a></li>
+<li><a href="http://www.jianshu.com/p/bf765cc7608c" target="_blank" rel="noopener">提高 iOS 开发效率的必备干货 - 简书</a></li>
+<li><a href="https://phphub.org/topics/1531" target="_blank" rel="noopener">PHPHub 所有项目正式开源! (包括 iOS, Android, Web, Server, UI)_PHPHub - PHP &amp; Laravel的中文社区</a></li>
+<li><a href="http://swiftlang.ng.bluemix.net/?cm_mmc=developerWorks-_-dWdevcenter-_-swift-_-lp&amp;cm_mc_uid=11516722774814492407333&amp;cm_mc_sid_50200000=1449240733#/repl" target="_blank" rel="noopener">IBM Swift Sandbox</a></li>
+<li><a href="https://github.com/krzysztofzablocki/KZPlayground" target="_blank" rel="noopener">Playgrounds for Objective-C</a></li>
+</ul>
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="http://iosdevelopertips.com/" target="_blank" rel="noopener">iOS developer tips</a></li>
+<li><a href="http://www.totem.training/swift-ios-tips-tricks-tutorials-blog/" target="_blank" rel="noopener">Swift and iOS 8 Tips, Tricks, and Tutorials Blog — Swift + iOS 8 Developer Training</a></li>
+<li><a href="http://blog.mikeswanson.com/" target="_blank" rel="noopener">Mike Swanson’s Blog</a></li>
+<li><a href="http://oleb.net/" target="_blank" rel="noopener">Ole Begemann – iOS Developer in Berlin</a></li>
+<li><a href="http://donmelton.com/2014/04/10/memories-of-steve/" target="_blank" rel="noopener">Memories of Steve</a></li>
+<li><a href="http://oleb.net/blog/" target="_blank" rel="noopener">Articles – Ole Begemann</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/06/26/epwing2test/" rel="next" title="EPWING2TEXT">
+                <i class="fa fa-chevron-left"></i> EPWING2TEXT
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/21/http2/" rel="prev" title="HTTP2">
+                HTTP2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qunwang6</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qunwang6" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qunwang6" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qunwang6@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gmail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#documents"><span class="nav-number">1.</span> <span class="nav-text">documents</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中文版-Apple-官方-Swift-教程"><span class="nav-number">1.1.</span> <span class="nav-text">中文版 Apple 官方 Swift 教程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-Developing-iOS-Apps-Today"><span class="nav-number">1.2.</span> <span class="nav-text">Start Developing iOS Apps Today</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hacking-with-Swift"><span class="nav-number">1.3.</span> <span class="nav-text">Hacking with Swift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Teaching-App-Development-with-Swift"><span class="nav-number">1.4.</span> <span class="nav-text">Teaching App Development with Swift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swift-A-Day"><span class="nav-number">1.5.</span> <span class="nav-text">Swift A Day</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-Custom-Keyboard-for-iOS-8"><span class="nav-number">1.6.</span> <span class="nav-text">Create Custom Keyboard for iOS 8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TestFlight——完美的iOS-app测试方案"><span class="nav-number">1.7.</span> <span class="nav-text">TestFlight——完美的iOS app测试方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-official-Swift-style-guide-for-raywenderlich-com"><span class="nav-number">1.8.</span> <span class="nav-text">The official Swift style guide for raywenderlich.com.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#learning"><span class="nav-number">1.9.</span> <span class="nav-text">learning</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#News"><span class="nav-number">2.</span> <span class="nav-text">News</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Xcode-6-3-for-OS-X-10-9"><span class="nav-number">2.1.</span> <span class="nav-text">Xcode 6.3 for OS X 10.9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Xcode-7"><span class="nav-number">2.2.</span> <span class="nav-text">Xcode 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What’s-new-in-Xcode-7"><span class="nav-number">2.3.</span> <span class="nav-text">What’s new in Xcode 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swift-2-0"><span class="nav-number">2.4.</span> <span class="nav-text">Swift 2.0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-8-3-to-iOS-9-0-API-Differences"><span class="nav-number">2.5.</span> <span class="nav-text">iOS 8.3 to iOS 9.0 API Differences</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Libraries"><span class="nav-number">3.</span> <span class="nav-text">Libraries</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#List-of-iOS-Top-1000-Libraries"><span class="nav-number">3.1.</span> <span class="nav-text">List of iOS Top 1000 Libraries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Libraries-Used-in-the-Top-100-iOS-Apps"><span class="nav-number">3.2.</span> <span class="nav-text">Libraries Used in the Top 100 iOS Apps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-iOS-open-source-libraries"><span class="nav-number">3.3.</span> <span class="nav-text">27 iOS open source libraries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自己总结的iOS、mac开源项目及库"><span class="nav-number">3.4.</span> <span class="nav-text">自己总结的iOS、mac开源项目及库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Elegant-HTTP-Networking-in-Swift"><span class="nav-number">3.5.</span> <span class="nav-text">Elegant HTTP Networking in Swift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Microsoft-TouchDevelop"><span class="nav-number">3.6.</span> <span class="nav-text">Microsoft TouchDevelop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-UI-Components-for-OS-X-El-Capitan-and-Windows-10"><span class="nav-number">3.7.</span> <span class="nav-text">React UI Components for OS X El Capitan and Windows 10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duet-Display-的运行原理"><span class="nav-number">3.8.</span> <span class="nav-text">Duet Display 的运行原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Swift-HTTP-for-Humans"><span class="nav-number">3.9.</span> <span class="nav-text">Swift HTTP for Humans</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swifter"><span class="nav-number">3.10.</span> <span class="nav-text">swifter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Layers-based-charts-library-for-iOS"><span class="nav-number">3.11.</span> <span class="nav-text">Layers based charts library for iOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ResearchKit"><span class="nav-number">3.12.</span> <span class="nav-text">ResearchKit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-Swift-HTTP-library-use-a-so-esay-API"><span class="nav-number">3.13.</span> <span class="nav-text">the Swift HTTP library use a so esay API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Microsoft-Project-Oxford-Home"><span class="nav-number">3.14.</span> <span class="nav-text">Microsoft Project Oxford Home</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-message-bar-for-iOS-written-in-Swift"><span class="nav-number">3.15.</span> <span class="nav-text">A message bar for iOS written in Swift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Open-Source-iOS-Game-created-in-SpriteKit-with-Swift"><span class="nav-number">3.16.</span> <span class="nav-text">Open Source iOS Game created in SpriteKit with Swift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EasyAnimation"><span class="nav-number">3.17.</span> <span class="nav-text">EasyAnimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让人眼前一亮的刷新"><span class="nav-number">3.18.</span> <span class="nav-text">让人眼前一亮的刷新</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#An-iOS-refresh-control-with-gear-animation"><span class="nav-number">3.19.</span> <span class="nav-text">An iOS refresh control with gear animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIStackView-Playground"><span class="nav-number">3.20.</span> <span class="nav-text">UIStackView-Playground</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UIStackView-Playground-jstart-UIStackView-Playground"><span class="nav-number">3.21.</span> <span class="nav-text">UIStackView-Playground jstart/UIStackView-Playground</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Smart-Notifications"><span class="nav-number">3.22.</span> <span class="nav-text">Smart Notifications</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3D-Force-Touch"><span class="nav-number">3.23.</span> <span class="nav-text">3D Force Touch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#f-lux"><span class="nav-number">3.24.</span> <span class="nav-text">f.lux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sideloading-f-lux-on-iOS-with-Xcode-7"><span class="nav-number">4.</span> <span class="nav-text">* Sideloading f.lux on iOS with Xcode 7</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GUI"><span class="nav-number">5.</span> <span class="nav-text">GUI</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS9-GUI-template"><span class="nav-number">5.1.</span> <span class="nav-text">iOS9 GUI template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-9-UIKit-for-Sketch"><span class="nav-number">5.2.</span> <span class="nav-text">iOS 9 UIKit for Sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Free-to-do-app-UI-kit-for-Photoshop-and-Sketch"><span class="nav-number">5.3.</span> <span class="nav-text">Free to-do app UI kit for Photoshop and Sketch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#font"><span class="nav-number">5.4.</span> <span class="nav-text">font</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XCTest"><span class="nav-number">5.5.</span> <span class="nav-text">XCTest</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#icon"><span class="nav-number">6.</span> <span class="nav-text">icon</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Automator-Workflows"><span class="nav-number">6.1.</span> <span class="nav-text">Automator Workflows</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图标生成"><span class="nav-number">6.2.</span> <span class="nav-text">图标生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动生成-3x-2x-1x-图片"><span class="nav-number">6.3.</span> <span class="nav-text">自动生成@3x @2x @1x 图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">7.</span> <span class="nav-text">Tools</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#跨平台开发"><span class="nav-number">7.1.</span> <span class="nav-text">跨平台开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用开发软件"><span class="nav-number">7.2.</span> <span class="nav-text">常用开发软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Visual-Studio-Code"><span class="nav-number">7.3.</span> <span class="nav-text">Visual Studio Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SketchExporter"><span class="nav-number">7.4.</span> <span class="nav-text">SketchExporter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Watch"><span class="nav-number">8.</span> <span class="nav-text">Watch</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Apple-Watch"><span class="nav-number">8.1.</span> <span class="nav-text">Apple Watch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Visual-Programing"><span class="nav-number">9.</span> <span class="nav-text">Visual Programing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#可视化编程"><span class="nav-number">9.1.</span> <span class="nav-text">可视化编程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他"><span class="nav-number">10.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#References"><span class="nav-number">11.</span> <span class="nav-text">References</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qunwang6</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

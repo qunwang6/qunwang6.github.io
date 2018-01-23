@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="iOS," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="证书知识及准备工作  几种开发者帐号区别  真机调试流程  内测发布流程  Appstore 上架流程">
+<meta name="keywords" content="iOS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="iOS 开发流程笔记">
+<meta property="og:url" content="https://qunwang6.github.io/2015/05/01/iOSDevelopNote/index.html">
+<meta property="og:site_name" content="群点科技">
+<meta property="og:description" content="证书知识及准备工作  几种开发者帐号区别  真机调试流程  内测发布流程  Appstore 上架流程">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2015-06-03T13:13:47.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="iOS 开发流程笔记">
+<meta name="twitter:description" content="证书知识及准备工作  几种开发者帐号区别  真机调试流程  内测发布流程  Appstore 上架流程">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://qunwang6.github.io/2015/05/01/iOSDevelopNote/"/>
+
+
+
+
+
+  <title>iOS 开发流程笔记 | 群点科技</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">群点科技</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">科技改变生活</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://qunwang6.github.io/2015/05/01/iOSDevelopNote/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="qunwang6">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="群点科技">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">iOS 开发流程笔记</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-01T00:00:00+08:00">
+                2015-05-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li style="list-style: none"><input type="checkbox" checked> 证书知识及准备工作</li>
+<li style="list-style: none"><input type="checkbox" checked> 几种开发者帐号区别</li>
+<li style="list-style: none"><input type="checkbox" checked> 真机调试流程</li>
+<li style="list-style: none"><input type="checkbox" checked> 内测发布流程</li>
+<li style="list-style: none"><input type="checkbox"> Appstore 上架流程</li>
+</ul>
+<a id="more"></a>
+<h2 id="证书知识及准备工作"><a href="#证书知识及准备工作" class="headerlink" title="证书知识及准备工作"></a>证书知识及准备工作</h2><h3 id="基础问题答疑"><a href="#基础问题答疑" class="headerlink" title="基础问题答疑"></a>基础问题答疑</h3><h4 id="什么是证书"><a href="#什么是证书" class="headerlink" title="什么是证书"></a>什么是证书</h4><p>由 apple 官方颁发, 用以证明开发者身份的特殊文件, 在 iOS 开发中主要用于代码签名, 保障 iOS 生态的健康安全, 分为开发者证书和发布者证书</p>
+<h4 id="什么时候需要证书"><a href="#什么时候需要证书" class="headerlink" title="什么时候需要证书"></a>什么时候需要证书</h4><p>只有在本机模拟器调试时无需代码签名, 当 App 需要在真机运行和发布时需要使用相应证书进行签名</p>
+<h4 id="证书如何获得"><a href="#证书如何获得" class="headerlink" title="证书如何获得"></a>证书如何获得</h4><p>首先需要拥有相应权限的开发者帐号, 通过在本地生成配对的密钥, 向 <a href="https://developer.apple.com/ios/manage/overview/index.action" target="_blank" rel="noopener">provisioning portal</a> 提交公钥后换取, 后续证书在使用时会验证本地私钥</p>
+<h4 id="如何对代码进行签名"><a href="#如何对代码进行签名" class="headerlink" title="如何对代码进行签名"></a>如何对代码进行签名</h4><p>在 xcode 中, 使用描述文件(provision profile 包含调试者证书, 授权设备清单, 应用ID), 在 <code>Build Settings</code> 中选择存于 <code>Keychain Access</code> 中的证书文件设置调试和发布任务时的代码签名</p>
+<h4 id="我生成的私钥如何共享给团队成员"><a href="#我生成的私钥如何共享给团队成员" class="headerlink" title="我生成的私钥如何共享给团队成员"></a>我生成的私钥如何共享给团队成员</h4><p>在 <code>Keychain Access</code> 中找到导入的证书, 右击导出为包含私钥的 Personal Information Exchange(.p12)文件(导出时可以创建密码), 团队成员再导入 <code>p12</code> 证书后就完整包含了证书和私钥</p>
+<h3 id="各流程中证书的需求情况"><a href="#各流程中证书的需求情况" class="headerlink" title="各流程中证书的需求情况"></a>各流程中证书的需求情况</h3><h4 id="模拟器调试"><a href="#模拟器调试" class="headerlink" title="模拟器调试"></a>模拟器调试</h4><p>不需要</p>
+<h4 id="真机调试"><a href="#真机调试" class="headerlink" title="真机调试"></a>真机调试</h4><ul>
+<li><p>描述文件(Provisioning Profiles)</p>
+</li>
+<li><p>开发者证书(ios_development.cer)</p>
+</li>
+</ul>
+<h4 id="打包和发布"><a href="#打包和发布" class="headerlink" title="打包和发布"></a>打包和发布</h4><ul>
+<li><p>描述文件(Provisioning Profiles)</p>
+</li>
+<li><p>可用于发布的开发者证书(ios_distribution.cer)</p>
+</li>
+</ul>
+<h4 id="消息推送后端服务"><a href="#消息推送后端服务" class="headerlink" title="消息推送后端服务"></a>消息推送后端服务</h4><ul>
+<li>apns 证书</li>
+</ul>
+<h3 id="开发中常见的证书及相关文件介绍"><a href="#开发中常见的证书及相关文件介绍" class="headerlink" title="开发中常见的证书及相关文件介绍"></a>开发中常见的证书及相关文件介绍</h3><h4 id="CSR-certificate-request-文件"><a href="#CSR-certificate-request-文件" class="headerlink" title="CSR(certificate request) 文件"></a>CSR(certificate request) 文件</h4><p>用于换取证书的公钥文件, 实际是在本地基于 <code>RSA</code> 加密得到配对的密钥, 私钥存于 <code>Keychain Access</code> 用于签名, 公钥作为换取证书的凭证</p>
+<h5 id="生成方法"><a href="#生成方法" class="headerlink" title="生成方法"></a>生成方法</h5><ul>
+<li><p>OSX 系统自带的 <strong>Keychain Access</strong></p>
+<ul>
+<li><p>选择 “Request a Certificate From a Certificate Authority…”</p>
+</li>
+<li><p>输入 email 等信息后保存为 <code>.certSigningRequest</code> 文件</p>
+</li>
+</ul>
+</li>
+<li><p>命令行下使用 <strong>openssl</strong> 生成</p>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ openssl genrsa -out private.key 2048</span><br><span class="line">$ openssl req -new -sha256 -key private.key -out my.certSigningRequest</span><br></pre></td></tr></table></figure>
+<h4 id="开发者证书"><a href="#开发者证书" class="headerlink" title="开发者证书"></a>开发者证书</h4><p>由 apple 官方颁发, 用来证明开发者资格的证书文件, 分开发(ios_development.cer)和发布(ios_distribution.cer)两种</p>
+<p><code>cer</code> 证书跟开发机(私钥)绑定只能在拥有私钥的机器上使用, 如果要迁移机器需要导出为 <code>p12</code> 文件</p>
+<h5 id="生成方法-1"><a href="#生成方法-1" class="headerlink" title="生成方法"></a>生成方法</h5><p>在 <a href="https://developer.apple.com/devcenter/ios/index.action" target="_blank" rel="noopener">开发者中心</a> “certificates” 面板中添加 <code>certificate</code> 并上传刚刚生成的 <code>CSR</code> 文件, 获取 <code>ios_development.cer</code></p>
+<h4 id="apns-Apple-Push-Notification-Service-证书"><a href="#apns-Apple-Push-Notification-Service-证书" class="headerlink" title="apns(Apple Push Notification Service) 证书"></a>apns(Apple Push Notification Service) 证书</h4><p>用于服务端消息推送, 类似 ssl 证书使用, 和 App 端的开发打包没有关系</p>
+<h5 id="生成方法-2"><a href="#生成方法-2" class="headerlink" title="生成方法"></a>生成方法</h5><p>在 <a href="https://developer.apple.com/devcenter/ios/index.action" target="_blank" rel="noopener">开发者中心</a> “Identifiers” 面板中添加 <code>App ID</code> 并上传刚刚生成的 <code>CSR</code> 文件, 获取 <code>aps_production.cer</code></p>
+<h4 id="p12-Personal-Information-Exchange-证书"><a href="#p12-Personal-Information-Exchange-证书" class="headerlink" title="p12(Personal Information Exchange) 证书"></a>p12(Personal Information Exchange) 证书</h4><p><code>p12</code> 证书实际是包含了 <code>cer</code> 证书及私钥信息, 可以分发给团队成员</p>
+<h5 id="生成方法-3"><a href="#生成方法-3" class="headerlink" title="生成方法"></a>生成方法</h5><p>在 <strong>Keychain Access</strong> 中找到已经导入的 <code>cer</code> 证书, 点右键导出为 <code>p12</code> 格式</p>
+<h4 id="描述文件-Provisioning-Profiles"><a href="#描述文件-Provisioning-Profiles" class="headerlink" title="描述文件(Provisioning Profiles)"></a>描述文件(Provisioning Profiles)</h4><p>包含 <code>certificate</code> <code>appID</code> <code>devices id</code> 的文件用于在 xcode 调试打包时提供授权的配置信息</p>
+<h5 id="生成方法-4"><a href="#生成方法-4" class="headerlink" title="生成方法"></a>生成方法</h5><ul>
+<li><p>在 <a href="https://developer.apple.com/devcenter/ios/index.action" target="_blank" rel="noopener">开发者中心</a> “Provisioning Profiles” 面板中添加 <code>iOS Provisioning Profiles</code> 并上传刚刚生成的 <code>CSR</code> 文件, 获取 <code>.mobileprovision</code> 文件</p>
+</li>
+<li><p>在 xcode 登录开发者帐号后可以连接开发者中心获取</p>
+</li>
+</ul>
+<h3 id="附录1-开发准备相关的网址"><a href="#附录1-开发准备相关的网址" class="headerlink" title="附录1: 开发准备相关的网址"></a>附录1: 开发准备相关的网址</h3><blockquote>
+<p>开发者中心<br><a href="https://developer.apple.com/devcenter/ios/index.action" target="_blank" rel="noopener">https://developer.apple.com/devcenter/ios/index.action</a></p>
+<p>iOS 描述管理(配置证书、描述文件、推送服务)<br><a href="https://developer.apple.com/ios/manage/overview/index.action" target="_blank" rel="noopener">https://developer.apple.com/ios/manage/overview/index.action</a></p>
+<p>切换团队(在 web 界面上死活没有找到)<br><a href="https://developer.apple.com/account/selectTeam.action" target="_blank" rel="noopener">https://developer.apple.com/account/selectTeam.action</a></p>
+<p>iOS 上架 Appstore<br><a href="http://itunesconnect.apple.com/" target="_blank" rel="noopener">http://itunesconnect.apple.com/</a></p>
+</blockquote>
+<h2 id="几种开发者帐号区别"><a href="#几种开发者帐号区别" class="headerlink" title="几种开发者帐号区别"></a>几种开发者帐号区别</h2><blockquote>
+<p>详见: <a href="https://developer.apple.com/programs/start/ios/" target="_blank" rel="noopener">https://developer.apple.com/programs/start/ios/</a></p>
+</blockquote>
+<ul>
+<li><a href="https://developer.apple.com/programs/ios/" target="_blank" rel="noopener">个人(individual)</a> <strong>$99</strong>/year</li>
+<li><a href="https://developer.apple.com/programs/ios/" target="_blank" rel="noopener">公司(company)</a> <strong>$99</strong>/year</li>
+<li><a href="https://developer.apple.com/programs/ios/enterprise/" target="_blank" rel="noopener">企业(enterprise)</a> <strong>$299</strong>/year</li>
+<li><a href="https://developer.apple.com/programs/start/university/" target="_blank" rel="noopener">大学(University)</a> <strong>free</strong></li>
+</ul>
+<h3 id="关键区别"><a href="#关键区别" class="headerlink" title="关键区别"></a>关键区别</h3><ul>
+<li>个人帐号可以真机调试, 发布 appstore, 每年 最多为 100台设备分发</li>
+<li>公司帐号和个人帐号类似, 只有这两种帐号可以发布 appstore, 主要特权是可以添加多个开发者子账号, 但只允许主账号提交, 发布等操作, 在协同开发时比较灵活, 可以各自管理授权设备等</li>
+<li>企业帐号<strong>无法用于 appstore 发布</strong>, 但可以不通过 appstore 发布任意 iphone 都可以安装的应用</li>
+<li>大学帐号不能发布 appstore, 主要拥有真机调试的权限</li>
+</ul>
+<h2 id="真机调试流程"><a href="#真机调试流程" class="headerlink" title="真机调试流程"></a>真机调试流程</h2><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>真机调试指 mac 连上 iphone, xcode 可以直接以这台 iphone 设备为 build target, 能在 iphone 里执行编译结果</p>
+<h3 id="条件和流程"><a href="#条件和流程" class="headerlink" title="条件和流程"></a>条件和流程</h3><p>分为拥有独立开发者帐号(也包括公司帐号或企业帐号成员)和共享开发者帐号两种情况</p>
+<h4 id="拥有独立开发者帐号"><a href="#拥有独立开发者帐号" class="headerlink" title="拥有独立开发者帐号"></a>拥有独立开发者帐号</h4><ul>
+<li><ol>
+<li>在 <a href="https://developer.apple.com/ios/manage/overview/index.action" target="_blank" rel="noopener">provisioning portal</a> 新建应用, 配置授权设备等</li>
+</ol>
+</li>
+<li><ol>
+<li>开发机上导入证书</li>
+</ol>
+</li>
+<li><ol>
+<li>在 xcode 上登录开发者帐号, 不需要准备描述文件, xcode 会自动生成(如果是公司帐号可以自动生成 <code>iOS Team Provisioning Profile</code>)</li>
+</ol>
+</li>
+</ul>
+<h4 id="共享开发者帐号"><a href="#共享开发者帐号" class="headerlink" title="共享开发者帐号"></a>共享开发者帐号</h4><p>如果无法在 xcode 登录一个开发者帐号, 也可以通过他人对你手机和应用 id 的授权, 得到 <code>.mobileprovision</code> 描述文件再导入其含私钥的证书(<code>p12</code>) 即可, 具体步骤如下:</p>
+<ul>
+<li><ol>
+<li>获得手机的 <code>udid</code> (可以连上 mac, 在 itunes 中查看)</li>
+</ol>
+</li>
+<li><ol>
+<li>告知对方 <code>udid</code> (用以设备授权) 和 应用 id</li>
+</ol>
+</li>
+<li><ol>
+<li>得到对方生成的证书和描述文件后, 先导入 <code>p12</code> 证书, 再双击 <code>mobileprovision</code> 文件</li>
+</ol>
+</li>
+<li><ol>
+<li>连接手机, 在 xcode 中选择 build target 为已连接的手机</li>
+</ol>
+</li>
+</ul>
+<blockquote>
+<p>对刚入门的个人开发者而言, 可以在淘宝搜 <code>iOS真机调试</code> 花几元购买一份授权, 包含(<code>p12</code> 证书 和 <code>.mobileprovision</code> 描述文件)</p>
+</blockquote>
+<h2 id="内测发布流程"><a href="#内测发布流程" class="headerlink" title="内测发布流程"></a>内测发布流程</h2><h3 id="基本概念-1"><a href="#基本概念-1" class="headerlink" title="基本概念"></a>基本概念</h3><p>当 App 开发进行到一定程度, 需要更多的人参与测试, 需要谋求一种方式方便应用能安装进更多的设备中</p>
+<h3 id="实现条件"><a href="#实现条件" class="headerlink" title="实现条件"></a>实现条件</h3><p>进行内测发布主要的关键点是:</p>
+<ul>
+<li><ol>
+<li>是如何将应用打包为 <code>.ipa</code></li>
+</ol>
+</li>
+</ul>
+<p>xcode6 以后, 个人/公司帐号无法对应用打包为 <code>.ipa</code>, 要么用 xcode5 打包要么拥有企业帐号级别的授权</p>
+<ul>
+<li><ol>
+<li>设备需不需要授权</li>
+</ol>
+</li>
+</ul>
+<p>个人/公司帐号权限只有在 <code>TestFlight</code> / 越狱渠道下完成不授权安装; 企业帐号授权可以在 <code>ad-hoc</code> / <code>in-house</code> 渠道下分发, 完成不授权设备安装</p>
+<h3 id="几种常见的分发途径"><a href="#几种常见的分发途径" class="headerlink" title="几种常见的分发途径"></a>几种常见的分发途径</h3><ul>
+<li>ad-hoc</li>
+</ul>
+<p>打包时必须在登录企业帐号(或其成员)并已导入证书和描述文件的情况下, 任何用户(未授权)都可以在手机上用浏览器访问一个 url(例: itms-services://?action=download-manifest&amp;url=<a href="https://example.com/manifest.plist" target="_blank" rel="noopener">https://example.com/manifest.plist</a>) 完成安装</p>
+<p>最大的问题是安装量有 100 的上限, 无法作为一个量很大的分发渠道</p>
+<ul>
+<li>in-house</li>
+</ul>
+<p>针对企业内部用户进行分发, 相比 <code>ad-hoc</code> 无安装量上限</p>
+<blockquote>
+<p>iOS 8.1.3 开始不能企业证书 Iresign 方式重新签名的应用无法安装<br><a href="https://support.apple.com/en-us/HT204245" target="_blank" rel="noopener">https://support.apple.com/en-us/HT204245</a></p>
+</blockquote>
+<ul>
+<li>TestFlight</li>
+</ul>
+<p>仅支持 <strong>iOS8.0</strong> 以上, 不需要对设备 <code>udid</code> 进行授权, 适合个人 / 公司开发者, 在应用发布前可以开启 TestFlight Beta 测试并添加测试者的 iTunes Connect 帐号, 需要待测用户拥有 iTunes Connect 帐号并在设备安装 <code>TestFlight</code> 客户端</p>
+<p>这种方式非常便于推送应用更新和收集测试信息</p>
+<ul>
+<li>导出 ipa 包, 越狱安装</li>
+</ul>
+<p>如果测试设备都越狱了, 这种方式非常灵活简单, 只有能导出 ipa 包就能通过 <a href="http://www.itools.cn/" target="_blank" rel="noopener">itools</a> 等第三方工具安装</p>
+<h3 id="附录2-常见分发渠道及工具地址"><a href="#附录2-常见分发渠道及工具地址" class="headerlink" title="附录2: 常见分发渠道及工具地址"></a>附录2: 常见分发渠道及工具地址</h3><blockquote>
+<p>fir-第三方应用托管平台<br><a href="http://fir.im/" target="_blank" rel="noopener">http://fir.im/</a></p>
+<p>TestFlight<br><a href="https://developer.apple.com/testflight/" target="_blank" rel="noopener">https://developer.apple.com/testflight/</a></p>
+<p>Agile-百度内部 ios 分发测试平台<br><a href="http://agile.baidu.com" target="_blank" rel="noopener">http://agile.baidu.com</a></p>
+<p>fir-分发相关工具<br><a href="http://fir.im/dev/tools" target="_blank" rel="noopener">http://fir.im/dev/tools</a></p>
+<p>itools<br><a href="http://www.itools.cn/" target="_blank" rel="noopener">http://www.itools.cn/</a></p>
+</blockquote>
+<h2 id="Appstore-上架流程"><a href="#Appstore-上架流程" class="headerlink" title="Appstore 上架流程"></a>Appstore 上架流程</h2><p>@TODO</p>
+<h3 id="附录3-App-store最新审核标准-2015-3"><a href="#附录3-App-store最新审核标准-2015-3" class="headerlink" title="附录3: App store最新审核标准(2015.3)"></a>附录3: App store最新审核标准(2015.3)</h3><blockquote>
+<p><a href="Appstore最新审核标准_2015-3.md">App store最新审核标准(2015.3) 中文翻译</a></p>
+<p><a href="https://developer.apple.com/app-store/review/guidelines" target="_blank" rel="noopener">App store最新审核标准(2015.3) 英文原版</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/05/01/Wordnik/" rel="next" title="Wordnik">
+                <i class="fa fa-chevron-left"></i> Wordnik
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/05/08/lingvo2osx/" rel="prev" title="用DSLConverter将Lingvo词典.DSL格式转换成MAC OSX可用的格式">
+                用DSLConverter将Lingvo词典.DSL格式转换成MAC OSX可用的格式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">qunwang6</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">38</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qunwang6" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://twitter.com/qunwang6" target="_blank" title="Twitter">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Twitter</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:qunwang6@gmail.com" target="_blank" title="Gmail">
+                      
+                        <i class="fa fa-fw fa-globe"></i>Gmail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#证书知识及准备工作"><span class="nav-number">1.</span> <span class="nav-text">证书知识及准备工作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础问题答疑"><span class="nav-number">1.1.</span> <span class="nav-text">基础问题答疑</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是证书"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#什么时候需要证书"><span class="nav-number">1.1.2.</span> <span class="nav-text">什么时候需要证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#证书如何获得"><span class="nav-number">1.1.3.</span> <span class="nav-text">证书如何获得</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何对代码进行签名"><span class="nav-number">1.1.4.</span> <span class="nav-text">如何对代码进行签名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我生成的私钥如何共享给团队成员"><span class="nav-number">1.1.5.</span> <span class="nav-text">我生成的私钥如何共享给团队成员</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#各流程中证书的需求情况"><span class="nav-number">1.2.</span> <span class="nav-text">各流程中证书的需求情况</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#模拟器调试"><span class="nav-number">1.2.1.</span> <span class="nav-text">模拟器调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#真机调试"><span class="nav-number">1.2.2.</span> <span class="nav-text">真机调试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打包和发布"><span class="nav-number">1.2.3.</span> <span class="nav-text">打包和发布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#消息推送后端服务"><span class="nav-number">1.2.4.</span> <span class="nav-text">消息推送后端服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发中常见的证书及相关文件介绍"><span class="nav-number">1.3.</span> <span class="nav-text">开发中常见的证书及相关文件介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSR-certificate-request-文件"><span class="nav-number">1.3.1.</span> <span class="nav-text">CSR(certificate request) 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成方法"><span class="nav-number">1.3.1.1.</span> <span class="nav-text">生成方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开发者证书"><span class="nav-number">1.3.2.</span> <span class="nav-text">开发者证书</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成方法-1"><span class="nav-number">1.3.2.1.</span> <span class="nav-text">生成方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#apns-Apple-Push-Notification-Service-证书"><span class="nav-number">1.3.3.</span> <span class="nav-text">apns(Apple Push Notification Service) 证书</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成方法-2"><span class="nav-number">1.3.3.1.</span> <span class="nav-text">生成方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#p12-Personal-Information-Exchange-证书"><span class="nav-number">1.3.4.</span> <span class="nav-text">p12(Personal Information Exchange) 证书</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成方法-3"><span class="nav-number">1.3.4.1.</span> <span class="nav-text">生成方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#描述文件-Provisioning-Profiles"><span class="nav-number">1.3.5.</span> <span class="nav-text">描述文件(Provisioning Profiles)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#生成方法-4"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">生成方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附录1-开发准备相关的网址"><span class="nav-number">1.4.</span> <span class="nav-text">附录1: 开发准备相关的网址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#几种开发者帐号区别"><span class="nav-number">2.</span> <span class="nav-text">几种开发者帐号区别</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关键区别"><span class="nav-number">2.1.</span> <span class="nav-text">关键区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#真机调试流程"><span class="nav-number">3.</span> <span class="nav-text">真机调试流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">3.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件和流程"><span class="nav-number">3.2.</span> <span class="nav-text">条件和流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#拥有独立开发者帐号"><span class="nav-number">3.2.1.</span> <span class="nav-text">拥有独立开发者帐号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#共享开发者帐号"><span class="nav-number">3.2.2.</span> <span class="nav-text">共享开发者帐号</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内测发布流程"><span class="nav-number">4.</span> <span class="nav-text">内测发布流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念-1"><span class="nav-number">4.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现条件"><span class="nav-number">4.2.</span> <span class="nav-text">实现条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#几种常见的分发途径"><span class="nav-number">4.3.</span> <span class="nav-text">几种常见的分发途径</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附录2-常见分发渠道及工具地址"><span class="nav-number">4.4.</span> <span class="nav-text">附录2: 常见分发渠道及工具地址</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appstore-上架流程"><span class="nav-number">5.</span> <span class="nav-text">Appstore 上架流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#附录3-App-store最新审核标准-2015-3"><span class="nav-number">5.1.</span> <span class="nav-text">附录3: App store最新审核标准(2015.3)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">qunwang6</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
